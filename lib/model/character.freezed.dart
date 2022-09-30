@@ -20,13 +20,20 @@ Character _$CharacterFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Character {
+  String get name => throw _privateConstructorUsedError;
+  String get gender => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CharacterCopyWith<Character> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
       _$CharacterCopyWithImpl<$Res>;
+  $Res call({String name, String gender});
 }
 
 /// @nodoc
@@ -36,13 +43,32 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
   final Character _value;
   // ignore: unused_field
   final $Res Function(Character) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? gender = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$$_CharacterCopyWith<$Res> {
+abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
   factory _$$_CharacterCopyWith(
           _$_Character value, $Res Function(_$_Character) then) =
       __$$_CharacterCopyWithImpl<$Res>;
+  @override
+  $Res call({String name, String gender});
 }
 
 /// @nodoc
@@ -54,30 +80,63 @@ class __$$_CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
 
   @override
   _$_Character get _value => super._value as _$_Character;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? gender = freezed,
+  }) {
+    return _then(_$_Character(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: gender == freezed
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Character implements _Character {
-  _$_Character();
+  _$_Character({required this.name, required this.gender});
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
 
   @override
+  final String name;
+  @override
+  final String gender;
+
+  @override
   String toString() {
-    return 'Character()';
+    return 'Character(name: $name, gender: $gender)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Character);
+        (other.runtimeType == runtimeType &&
+            other is _$_Character &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.gender, gender));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(gender));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_CharacterCopyWith<_$_Character> get copyWith =>
+      __$$_CharacterCopyWithImpl<_$_Character>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -88,8 +147,19 @@ class _$_Character implements _Character {
 }
 
 abstract class _Character implements Character {
-  factory _Character() = _$_Character;
+  factory _Character(
+      {required final String name,
+      required final String gender}) = _$_Character;
 
   factory _Character.fromJson(Map<String, dynamic> json) =
       _$_Character.fromJson;
+
+  @override
+  String get name;
+  @override
+  String get gender;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CharacterCopyWith<_$_Character> get copyWith =>
+      throw _privateConstructorUsedError;
 }
