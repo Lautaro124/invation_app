@@ -4,7 +4,7 @@ part 'character.freezed.dart';
 part 'character.g.dart';
 
 @freezed
-class Character with _$Character {
+abstract class Character with _$Character {
   factory Character({
     required String name,
     required String gender,
