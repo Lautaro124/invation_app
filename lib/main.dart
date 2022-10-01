@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
+import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
 import 'package:invasion_app/resources/utils/routes.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => CharacterBloc()),
         BlocProvider(create: (context) => CharacterDetailBloc()),
+        BlocProvider(create: (context) => CharacterReportedBloc())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

@@ -25,10 +25,6 @@ class ServiceApi {
     try {
       ResponseMap<dynamic> response = await _dio.post(_url, data: data);
 
-      if (response.statusCode != 200) {
-        throw Exception(response.statusMessage);
-      }
-
       return response;
     } catch (error) {
       rethrow;
