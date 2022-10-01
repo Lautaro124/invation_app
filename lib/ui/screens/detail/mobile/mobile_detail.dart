@@ -6,6 +6,7 @@ import 'package:invasion_app/model/character.dart';
 import 'package:invasion_app/model/character_detail.dart';
 import 'package:invasion_app/model/character_reported.dart';
 import 'package:invasion_app/resources/utils/get_url_id.dart';
+import 'package:invasion_app/ui/widgets/dialog_report_status.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
 
 class MobileDetail extends StatelessWidget {
@@ -53,5 +54,13 @@ class MobileDetail extends StatelessWidget {
           characterName: character.name,
           dateTime: DateTime.now(),
         )));
+    dialog(context);
+  }
+
+  void dialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => const DialogReportStatus(),
+    );
   }
 }
