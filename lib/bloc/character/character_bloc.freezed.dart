@@ -19,38 +19,38 @@ mixin _$CharacterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) changeCharacters,
+    required TResult Function(int page) changePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeCharacters value) changeCharacters,
+    required TResult Function(_ChangePage value) changePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +113,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) changeCharacters,
+    required TResult Function(int page) changePage,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +144,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeCharacters value) changeCharacters,
+    required TResult Function(_ChangePage value) changePage,
   }) {
     return started(this);
   }
@@ -153,7 +153,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
   }) {
     return started?.call(this);
   }
@@ -162,7 +162,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -177,29 +177,29 @@ abstract class _Started implements CharacterEvent {
 }
 
 /// @nodoc
-abstract class _$$_ChangeCharactersCopyWith<$Res> {
-  factory _$$_ChangeCharactersCopyWith(
-          _$_ChangeCharacters value, $Res Function(_$_ChangeCharacters) then) =
-      __$$_ChangeCharactersCopyWithImpl<$Res>;
+abstract class _$$_ChangePageCopyWith<$Res> {
+  factory _$$_ChangePageCopyWith(
+          _$_ChangePage value, $Res Function(_$_ChangePage) then) =
+      __$$_ChangePageCopyWithImpl<$Res>;
   $Res call({int page});
 }
 
 /// @nodoc
-class __$$_ChangeCharactersCopyWithImpl<$Res>
+class __$$_ChangePageCopyWithImpl<$Res>
     extends _$CharacterEventCopyWithImpl<$Res>
-    implements _$$_ChangeCharactersCopyWith<$Res> {
-  __$$_ChangeCharactersCopyWithImpl(
-      _$_ChangeCharacters _value, $Res Function(_$_ChangeCharacters) _then)
-      : super(_value, (v) => _then(v as _$_ChangeCharacters));
+    implements _$$_ChangePageCopyWith<$Res> {
+  __$$_ChangePageCopyWithImpl(
+      _$_ChangePage _value, $Res Function(_$_ChangePage) _then)
+      : super(_value, (v) => _then(v as _$_ChangePage));
 
   @override
-  _$_ChangeCharacters get _value => super._value as _$_ChangeCharacters;
+  _$_ChangePage get _value => super._value as _$_ChangePage;
 
   @override
   $Res call({
     Object? page = freezed,
   }) {
-    return _then(_$_ChangeCharacters(
+    return _then(_$_ChangePage(
       page == freezed
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
@@ -210,22 +210,22 @@ class __$$_ChangeCharactersCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ChangeCharacters implements _ChangeCharacters {
-  const _$_ChangeCharacters(this.page);
+class _$_ChangePage implements _ChangePage {
+  const _$_ChangePage(this.page);
 
   @override
   final int page;
 
   @override
   String toString() {
-    return 'CharacterEvent.changeCharacters(page: $page)';
+    return 'CharacterEvent.changePage(page: $page)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeCharacters &&
+            other is _$_ChangePage &&
             const DeepCollectionEquality().equals(other.page, page));
   }
 
@@ -235,36 +235,36 @@ class _$_ChangeCharacters implements _ChangeCharacters {
 
   @JsonKey(ignore: true)
   @override
-  _$$_ChangeCharactersCopyWith<_$_ChangeCharacters> get copyWith =>
-      __$$_ChangeCharactersCopyWithImpl<_$_ChangeCharacters>(this, _$identity);
+  _$$_ChangePageCopyWith<_$_ChangePage> get copyWith =>
+      __$$_ChangePageCopyWithImpl<_$_ChangePage>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int page) changeCharacters,
+    required TResult Function(int page) changePage,
   }) {
-    return changeCharacters(page);
+    return changePage(page);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
   }) {
-    return changeCharacters?.call(page);
+    return changePage?.call(page);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int page)? changeCharacters,
+    TResult Function(int page)? changePage,
     required TResult orElse(),
   }) {
-    if (changeCharacters != null) {
-      return changeCharacters(page);
+    if (changePage != null) {
+      return changePage(page);
     }
     return orElse();
   }
@@ -273,40 +273,40 @@ class _$_ChangeCharacters implements _ChangeCharacters {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeCharacters value) changeCharacters,
+    required TResult Function(_ChangePage value) changePage,
   }) {
-    return changeCharacters(this);
+    return changePage(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
   }) {
-    return changeCharacters?.call(this);
+    return changePage?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeCharacters value)? changeCharacters,
+    TResult Function(_ChangePage value)? changePage,
     required TResult orElse(),
   }) {
-    if (changeCharacters != null) {
-      return changeCharacters(this);
+    if (changePage != null) {
+      return changePage(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeCharacters implements CharacterEvent {
-  const factory _ChangeCharacters(final int page) = _$_ChangeCharacters;
+abstract class _ChangePage implements CharacterEvent {
+  const factory _ChangePage(final int page) = _$_ChangePage;
 
   int get page;
   @JsonKey(ignore: true)
-  _$$_ChangeCharactersCopyWith<_$_ChangeCharacters> get copyWith =>
+  _$$_ChangePageCopyWith<_$_ChangePage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -15,12 +15,12 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
         started: () async {
           List<Character> characters = await getCharacter(1);
 
-          emit(CharacterState.initial(characters));
+          emit(CharacterState.setCharactersState(characters));
         },
-        changeCharacters: (int page) async {
+        changePage: (int page) async {
           List<Character> characters = await getCharacter(page);
 
-          emit(CharacterState.initial(characters));
+          emit(CharacterState.setCharactersState(characters));
         },
       );
     });

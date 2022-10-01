@@ -23,6 +23,7 @@ class _MobileDashboardState extends State<MobileDashboard> {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (BuildContext context, CharacterState state) {
         return ScreenBase(
+          title: 'Invasion',
           child: ListView(
             children: state.characters
                 .map(

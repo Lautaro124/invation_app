@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:invasion_app/repository/endpints.dart';
+import 'package:invasion_app/repository/endpoints.dart';
 import 'package:invasion_app/resources/data_types/response_data_type.dart';
 
 class ServiceApi {
