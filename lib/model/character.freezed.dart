@@ -22,6 +22,8 @@ Character _$CharacterFromJson(Map<String, dynamic> json) {
 mixin _$Character {
   String get name => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
+  @JsonKey(name: 'url')
+  String get detailUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +35,8 @@ mixin _$Character {
 abstract class $CharacterCopyWith<$Res> {
   factory $CharacterCopyWith(Character value, $Res Function(Character) then) =
       _$CharacterCopyWithImpl<$Res>;
-  $Res call({String name, String gender});
+  $Res call(
+      {String name, String gender, @JsonKey(name: 'url') String detailUrl});
 }
 
 /// @nodoc
@@ -48,6 +51,7 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
   $Res call({
     Object? name = freezed,
     Object? gender = freezed,
+    Object? detailUrl = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed
@@ -57,6 +61,10 @@ class _$CharacterCopyWithImpl<$Res> implements $CharacterCopyWith<$Res> {
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
+              as String,
+      detailUrl: detailUrl == freezed
+          ? _value.detailUrl
+          : detailUrl // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -68,7 +76,8 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
           _$_Character value, $Res Function(_$_Character) then) =
       __$$_CharacterCopyWithImpl<$Res>;
   @override
-  $Res call({String name, String gender});
+  $Res call(
+      {String name, String gender, @JsonKey(name: 'url') String detailUrl});
 }
 
 /// @nodoc
@@ -85,6 +94,7 @@ class __$$_CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
   $Res call({
     Object? name = freezed,
     Object? gender = freezed,
+    Object? detailUrl = freezed,
   }) {
     return _then(_$_Character(
       name: name == freezed
@@ -95,6 +105,10 @@ class __$$_CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as String,
+      detailUrl: detailUrl == freezed
+          ? _value.detailUrl
+          : detailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -102,7 +116,10 @@ class __$$_CharacterCopyWithImpl<$Res> extends _$CharacterCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Character implements _Character {
-  _$_Character({required this.name, required this.gender});
+  _$_Character(
+      {required this.name,
+      required this.gender,
+      @JsonKey(name: 'url') required this.detailUrl});
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
@@ -111,10 +128,13 @@ class _$_Character implements _Character {
   final String name;
   @override
   final String gender;
+  @override
+  @JsonKey(name: 'url')
+  final String detailUrl;
 
   @override
   String toString() {
-    return 'Character(name: $name, gender: $gender)';
+    return 'Character(name: $name, gender: $gender, detailUrl: $detailUrl)';
   }
 
   @override
@@ -123,7 +143,8 @@ class _$_Character implements _Character {
         (other.runtimeType == runtimeType &&
             other is _$_Character &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.gender, gender));
+            const DeepCollectionEquality().equals(other.gender, gender) &&
+            const DeepCollectionEquality().equals(other.detailUrl, detailUrl));
   }
 
   @JsonKey(ignore: true)
@@ -131,7 +152,8 @@ class _$_Character implements _Character {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(gender));
+      const DeepCollectionEquality().hash(gender),
+      const DeepCollectionEquality().hash(detailUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -149,7 +171,8 @@ class _$_Character implements _Character {
 abstract class _Character implements Character {
   factory _Character(
       {required final String name,
-      required final String gender}) = _$_Character;
+      required final String gender,
+      @JsonKey(name: 'url') required final String detailUrl}) = _$_Character;
 
   factory _Character.fromJson(Map<String, dynamic> json) =
       _$_Character.fromJson;
@@ -158,6 +181,9 @@ abstract class _Character implements Character {
   String get name;
   @override
   String get gender;
+  @override
+  @JsonKey(name: 'url')
+  String get detailUrl;
   @override
   @JsonKey(ignore: true)
   _$$_CharacterCopyWith<_$_Character> get copyWith =>

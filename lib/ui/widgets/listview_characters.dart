@@ -14,7 +14,7 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
-      builder: (BuildContext context, CharacterState state) {
+      builder: (context, state) {
         return SizedBox(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.75,
@@ -22,8 +22,7 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
             children: state.characters
                 .map(
                   (character) => CharacterCard(
-                    name: character.name,
-                    gender: character.gender,
+                    character: character,
                   ),
                 )
                 .toList(),
