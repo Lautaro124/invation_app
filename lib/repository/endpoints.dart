@@ -1,2 +1,2 @@
 const String apiUrl = 'https://swapi.dev/api/',
-    pepoleEndpont = 'people//?page=';
+    pepoleEndpoint = 'people//?page=';
