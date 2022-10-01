@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
-import 'package:invasion_app/ui/screens/dashboard/dashboard.dart';
+import 'package:invasion_app/resources/utils/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const Dashboard(),
+        initialRoute: routes.keys.first,
+        routes: routes,
       ),
     );
   }
