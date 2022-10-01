@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/pagination_buttion.dart';
 
 class PaginationWidget extends StatefulWidget {
@@ -23,14 +24,14 @@ class _PaginationWidgetState extends State<PaginationWidget> {
               PaginationButton(
                 onTap: state.pagination.previous == null
                     ? null
-                    : () => previousPage(state.currentPage),
-                tite: 'Previous',
+                    : () => changePage(state.currentPage - 1),
+                tite: previous,
               ),
               PaginationButton(
                 onTap: state.pagination.next == null
                     ? null
-                    : () => nextPage(state.currentPage),
-                tite: 'Next',
+                    : () => changePage(state.currentPage + 1),
+                tite: next,
               ),
             ],
           ),
@@ -39,13 +40,6 @@ class _PaginationWidgetState extends State<PaginationWidget> {
     );
   }
 
-  void nextPage(int currentPage) {
-    final newPage = currentPage + 1;
-    context.read<CharacterBloc>().add(CharacterEvent.getPageInfo(newPage));
-  }
-
-  void previousPage(int currentPage) {
-    final newPage = currentPage - 1;
-    context.read<CharacterBloc>().add(CharacterEvent.getPageInfo(newPage));
-  }
+  void changePage(int page) =>
+      context.read<CharacterBloc>().add(CharacterEvent.getPageInfo(page));
 }
