@@ -1,1 +1,3 @@
-const String apiUrl = 'https://swapi.dev/api/', pepoleEndpoint = 'people';
+const String starWarsApiUrl = 'https://swapi.dev/api/',
+    reporterApiUrl = 'https://jsonplaceholder.typicode.com/posts',
+    pepoleEndpoint = 'people';

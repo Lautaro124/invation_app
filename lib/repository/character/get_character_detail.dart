@@ -6,9 +6,8 @@ import 'package:invasion_app/resources/data_types/response_data_type.dart';
 Future<CharacterDetail> getCharacterDetail(int id) async {
   try {
     ResponseMap<dynamic> response =
-        await ServiceApi('$pepoleEndpoint/$id').get();
+        await ServiceApi('$starWarsApiUrl$pepoleEndpoint/$id').get();
 
-    print(CharacterDetail.fromJson(response.data!));
     return CharacterDetail.fromJson(response.data!);
   } catch (error) {
     rethrow;

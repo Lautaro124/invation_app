@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
 import 'package:invasion_app/model/character.dart';
+import 'package:invasion_app/resources/enum/navigation_routes.dart';
 import 'package:invasion_app/resources/utils/get_url_id.dart';
 
 class CharacterCard extends StatefulWidget {
@@ -22,12 +23,16 @@ class _CharacterCardState extends State<CharacterCard> {
     );
   }
 
-  void detailEvent() async {
+  void detailEvent() {
     Character character = widget.character;
     int id = getIdToUrl(character.detailUrl);
 
     context
         .read<CharacterDetailBloc>()
         .add(CharacterDetailEvent.setDetail(id, character));
+    goDetailScreen();
   }
+
+  void goDetailScreen() =>
+      Navigator.pushNamed(context, NavigationRoutes.detail.name);
 }

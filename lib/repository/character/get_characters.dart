@@ -7,7 +7,7 @@ import 'package:invasion_app/resources/utils/list_character_converter.dart';
 Future<List<Character>> getCharacter(int page) async {
   try {
     ResponseMap<dynamic> response =
-        await ServiceApi('$pepoleEndpoint/?page=$page').get();
+        await ServiceApi('$starWarsApiUrl$pepoleEndpoint/?page=$page').get();
 
     final responseCharacters =
         List<Map<String, dynamic>>.from(response.data!['results']);

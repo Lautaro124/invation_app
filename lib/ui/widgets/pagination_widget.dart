@@ -15,7 +15,7 @@ class _PaginationWidgetState extends State<PaginationWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
-      builder: (BuildContext context, CharacterState state) {
+      builder: (context, state) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Row(
