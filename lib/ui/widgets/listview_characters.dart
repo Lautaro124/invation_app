@@ -22,8 +22,7 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
             children: state.characters
                 .map(
                   (character) => CharacterCard(
-                    name: character.name,
-                    gender: character.gender,
+                    character: character,
                   ),
                 )
                 .toList(),

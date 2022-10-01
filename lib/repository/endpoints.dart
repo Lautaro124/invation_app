@@ -1,2 +1,1 @@
-const String apiUrl = 'https://swapi.dev/api/',
-    pepoleEndpoint = 'people//?page=';
+const String apiUrl = 'https://swapi.dev/api/', pepoleEndpoint = 'people';
