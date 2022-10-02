@@ -12,7 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   cupertino_icons: ^1.0.2
   freezed_annotation: ^2.1.0
   json_annotation: ^4.7.0
@@ -33,3 +32,12 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  fonts:
+    - family: starjedi
+      fonts:
+        - asset: lib/resources/fonts/starjedi/Starjedi.ttf
+
+    - family: starjout
+      fonts:
+        - asset: lib/resources/fonts/starjout/Starjout.ttf
