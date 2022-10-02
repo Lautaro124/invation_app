@@ -5,5 +5,6 @@ class CharacterDetailState with _$CharacterDetailState {
   const factory CharacterDetailState.detailState({
     Character? character,
     CharacterDetail? characterDetail,
+    HomeWord? homeWord,
   }) = _DetailState;
 }
