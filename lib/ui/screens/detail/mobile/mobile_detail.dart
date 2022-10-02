@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
-import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
 import 'package:invasion_app/model/character/character_detail.dart';
-import 'package:invasion_app/model/character/character_reported.dart';
-import 'package:invasion_app/resources/utils/get_url_id.dart';
-import 'package:invasion_app/ui/widgets/dialog_report_status.dart';
+import 'package:invasion_app/ui/widgets/homeword_info.dart';
+import 'package:invasion_app/ui/widgets/report_button.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
 
 class MobileDetail extends StatelessWidget {
@@ -31,37 +29,13 @@ class MobileDetail extends StatelessWidget {
                 Text(characterDetail != null ? characterDetail.birthYear : ''),
                 Text(characterDetail != null ? characterDetail.eyeColor : ''),
                 Text(characterDetail != null ? characterDetail.height : ''),
-                ElevatedButton(
-                    onPressed: () => event(context, character),
-                    child: const Text('Report'))
+                const HomeWordInfo(),
+                ReportButton(character: character)
               ],
             ),
           ),
         );
       },
-    );
-  }
-
-  void event(BuildContext context, Character? character) {
-    if (!context.read<CharacterReportedBloc>().state.isConected) return;
-    if (character == null) return;
-
-    String userId = getIdToUrl(character.detailUrl).toString();
-
-    context
-        .read<CharacterReportedBloc>()
-        .add(CharacterReportedEvent.sendReport(CharacterReported(
-          userId: userId,
-          characterName: character.name,
-          dateTime: DateTime.now(),
-        )));
-    dialog(context);
-  }
-
-  void dialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => const DialogReportStatus(),
     );
   }
 }

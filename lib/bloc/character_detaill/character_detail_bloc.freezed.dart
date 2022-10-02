@@ -252,22 +252,25 @@ abstract class _SetDetail implements CharacterDetailEvent {
 mixin _$CharacterDetailState {
   Character? get character => throw _privateConstructorUsedError;
   CharacterDetail? get characterDetail => throw _privateConstructorUsedError;
+  HomeWord? get homeWord => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Character? character, CharacterDetail? characterDetail)
+    required TResult Function(Character? character,
+            CharacterDetail? characterDetail, HomeWord? homeWord)
         detailState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Character? character, CharacterDetail? characterDetail)?
+    TResult Function(Character? character, CharacterDetail? characterDetail,
+            HomeWord? homeWord)?
         detailState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Character? character, CharacterDetail? characterDetail)?
+    TResult Function(Character? character, CharacterDetail? characterDetail,
+            HomeWord? homeWord)?
         detailState,
     required TResult orElse(),
   }) =>
@@ -299,10 +302,14 @@ abstract class $CharacterDetailStateCopyWith<$Res> {
   factory $CharacterDetailStateCopyWith(CharacterDetailState value,
           $Res Function(CharacterDetailState) then) =
       _$CharacterDetailStateCopyWithImpl<$Res>;
-  $Res call({Character? character, CharacterDetail? characterDetail});
+  $Res call(
+      {Character? character,
+      CharacterDetail? characterDetail,
+      HomeWord? homeWord});
 
   $CharacterCopyWith<$Res>? get character;
   $CharacterDetailCopyWith<$Res>? get characterDetail;
+  $HomeWordCopyWith<$Res>? get homeWord;
 }
 
 /// @nodoc
@@ -318,6 +325,7 @@ class _$CharacterDetailStateCopyWithImpl<$Res>
   $Res call({
     Object? character = freezed,
     Object? characterDetail = freezed,
+    Object? homeWord = freezed,
   }) {
     return _then(_value.copyWith(
       character: character == freezed
@@ -328,6 +336,10 @@ class _$CharacterDetailStateCopyWithImpl<$Res>
           ? _value.characterDetail
           : characterDetail // ignore: cast_nullable_to_non_nullable
               as CharacterDetail?,
+      homeWord: homeWord == freezed
+          ? _value.homeWord
+          : homeWord // ignore: cast_nullable_to_non_nullable
+              as HomeWord?,
     ));
   }
 
@@ -352,6 +364,17 @@ class _$CharacterDetailStateCopyWithImpl<$Res>
       return _then(_value.copyWith(characterDetail: value));
     });
   }
+
+  @override
+  $HomeWordCopyWith<$Res>? get homeWord {
+    if (_value.homeWord == null) {
+      return null;
+    }
+
+    return $HomeWordCopyWith<$Res>(_value.homeWord!, (value) {
+      return _then(_value.copyWith(homeWord: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -361,12 +384,17 @@ abstract class _$$_DetailStateCopyWith<$Res>
           _$_DetailState value, $Res Function(_$_DetailState) then) =
       __$$_DetailStateCopyWithImpl<$Res>;
   @override
-  $Res call({Character? character, CharacterDetail? characterDetail});
+  $Res call(
+      {Character? character,
+      CharacterDetail? characterDetail,
+      HomeWord? homeWord});
 
   @override
   $CharacterCopyWith<$Res>? get character;
   @override
   $CharacterDetailCopyWith<$Res>? get characterDetail;
+  @override
+  $HomeWordCopyWith<$Res>? get homeWord;
 }
 
 /// @nodoc
@@ -384,6 +412,7 @@ class __$$_DetailStateCopyWithImpl<$Res>
   $Res call({
     Object? character = freezed,
     Object? characterDetail = freezed,
+    Object? homeWord = freezed,
   }) {
     return _then(_$_DetailState(
       character: character == freezed
@@ -394,6 +423,10 @@ class __$$_DetailStateCopyWithImpl<$Res>
           ? _value.characterDetail
           : characterDetail // ignore: cast_nullable_to_non_nullable
               as CharacterDetail?,
+      homeWord: homeWord == freezed
+          ? _value.homeWord
+          : homeWord // ignore: cast_nullable_to_non_nullable
+              as HomeWord?,
     ));
   }
 }
@@ -401,16 +434,18 @@ class __$$_DetailStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DetailState implements _DetailState {
-  const _$_DetailState({this.character, this.characterDetail});
+  const _$_DetailState({this.character, this.characterDetail, this.homeWord});
 
   @override
   final Character? character;
   @override
   final CharacterDetail? characterDetail;
+  @override
+  final HomeWord? homeWord;
 
   @override
   String toString() {
-    return 'CharacterDetailState.detailState(character: $character, characterDetail: $characterDetail)';
+    return 'CharacterDetailState.detailState(character: $character, characterDetail: $characterDetail, homeWord: $homeWord)';
   }
 
   @override
@@ -420,14 +455,16 @@ class _$_DetailState implements _DetailState {
             other is _$_DetailState &&
             const DeepCollectionEquality().equals(other.character, character) &&
             const DeepCollectionEquality()
-                .equals(other.characterDetail, characterDetail));
+                .equals(other.characterDetail, characterDetail) &&
+            const DeepCollectionEquality().equals(other.homeWord, homeWord));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(character),
-      const DeepCollectionEquality().hash(characterDetail));
+      const DeepCollectionEquality().hash(characterDetail),
+      const DeepCollectionEquality().hash(homeWord));
 
   @JsonKey(ignore: true)
   @override
@@ -437,31 +474,33 @@ class _$_DetailState implements _DetailState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            Character? character, CharacterDetail? characterDetail)
+    required TResult Function(Character? character,
+            CharacterDetail? characterDetail, HomeWord? homeWord)
         detailState,
   }) {
-    return detailState(character, characterDetail);
+    return detailState(character, characterDetail, homeWord);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Character? character, CharacterDetail? characterDetail)?
+    TResult Function(Character? character, CharacterDetail? characterDetail,
+            HomeWord? homeWord)?
         detailState,
   }) {
-    return detailState?.call(character, characterDetail);
+    return detailState?.call(character, characterDetail, homeWord);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Character? character, CharacterDetail? characterDetail)?
+    TResult Function(Character? character, CharacterDetail? characterDetail,
+            HomeWord? homeWord)?
         detailState,
     required TResult orElse(),
   }) {
     if (detailState != null) {
-      return detailState(character, characterDetail);
+      return detailState(character, characterDetail, homeWord);
     }
     return orElse();
   }
@@ -498,12 +537,15 @@ class _$_DetailState implements _DetailState {
 abstract class _DetailState implements CharacterDetailState {
   const factory _DetailState(
       {final Character? character,
-      final CharacterDetail? characterDetail}) = _$_DetailState;
+      final CharacterDetail? characterDetail,
+      final HomeWord? homeWord}) = _$_DetailState;
 
   @override
   Character? get character;
   @override
   CharacterDetail? get characterDetail;
+  @override
+  HomeWord? get homeWord;
   @override
   @JsonKey(ignore: true)
   _$$_DetailStateCopyWith<_$_DetailState> get copyWith =>
