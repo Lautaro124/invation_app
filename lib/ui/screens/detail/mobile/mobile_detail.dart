@@ -43,6 +43,7 @@ class MobileDetail extends StatelessWidget {
   }
 
   void event(BuildContext context, Character? character) {
+    if (!context.read<CharacterReportedBloc>().state.isConected) return;
     if (character == null) return;
 
     String userId = getIdToUrl(character.detailUrl).toString();

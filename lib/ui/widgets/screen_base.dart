@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invasion_app/ui/widgets/app_bar_default.dart';
 
 class ScreenBase extends StatelessWidget {
   final Widget child;
@@ -14,11 +15,7 @@ class ScreenBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbar ??
-          AppBar(
-            title: Text(title ?? ''),
-            centerTitle: true,
-          ),
+      appBar: appbar ?? appBar(context, title),
       body: SafeArea(child: child),
     );
   }
