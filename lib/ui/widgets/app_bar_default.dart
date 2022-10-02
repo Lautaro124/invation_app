@@ -12,8 +12,13 @@ AppBar appBar(BuildContext context, String? title) => AppBar(
           onPressed: () {
             Navigator.pushNamed(context, NavigationRoutes.settings.name);
           },
-          icon: const Icon(
-            Icons.settings,
+          icon: IconTheme(
+            data: Theme.of(context).iconTheme.copyWith(
+                  size: 25,
+                ),
+            child: const Icon(
+              Icons.settings_outlined,
+            ),
           ),
         )
       ],
