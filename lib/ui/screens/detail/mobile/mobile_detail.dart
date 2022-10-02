@@ -7,6 +7,7 @@ import 'package:invasion_app/ui/widgets/homeword_info.dart';
 import 'package:invasion_app/ui/widgets/report_button.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
 import 'package:invasion_app/ui/widgets/starship.dart';
+import 'package:invasion_app/ui/widgets/vehicles_list.dart';
 
 class MobileDetail extends StatelessWidget {
   const MobileDetail({Key? key}) : super(key: key);
@@ -32,6 +33,7 @@ class MobileDetail extends StatelessWidget {
                 Text(characterDetail != null ? characterDetail.height : ''),
                 const HomeWordInfo(),
                 const StarShipInfo(),
+                const VehiclesList(),
                 ReportButton(character: character)
               ],
             ),
