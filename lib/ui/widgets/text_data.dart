@@ -9,7 +9,7 @@ class TextData extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.maxFinite,
-      height: MediaQuery.of(context).size.height * 0.1,
+      height: MediaQuery.of(context).size.height * 0.09,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
 import 'package:invasion_app/ui/widgets/character_basic_info.dart';
+import 'package:invasion_app/ui/widgets/divider_detail.dart';
 import 'package:invasion_app/ui/widgets/homeword_info.dart';
 import 'package:invasion_app/ui/widgets/report_button.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
@@ -27,8 +28,11 @@ class MobileDetail extends StatelessWidget {
             child: Column(
               children: [
                 const CharacterBasicInfo(),
+                const DividerDetail(),
                 const HomeWordInfo(),
+                const DividerDetail(),
                 const StarShipInfo(),
+                const DividerDetail(),
                 const VehiclesList(),
                 ReportButton(character: character)
               ],
