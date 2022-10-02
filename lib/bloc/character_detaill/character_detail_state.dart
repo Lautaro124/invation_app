@@ -6,5 +6,6 @@ class CharacterDetailState with _$CharacterDetailState {
     Character? character,
     CharacterDetail? characterDetail,
     HomeWord? homeWord,
+    List<Starships>? starships,
   }) = _DetailState;
 }
