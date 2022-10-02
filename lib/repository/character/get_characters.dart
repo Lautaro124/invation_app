@@ -1,8 +1,8 @@
 import 'package:invasion_app/model/character/character.dart';
 import 'package:invasion_app/repository/endpoints.dart';
-import 'package:invasion_app/repository/service_api.dart';
+import 'package:invasion_app/repository/service/service_api.dart';
+import 'package:invasion_app/repository/service/service_api_utils.dart';
 import 'package:invasion_app/resources/data_types/response_data_type.dart';
-import 'package:invasion_app/resources/utils/list_character_converter.dart';
 
 Future<List<Character>> getCharacter(int page) async {
   try {
