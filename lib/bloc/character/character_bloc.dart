@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:invasion_app/model/character.dart';
-import 'package:invasion_app/model/pagination.dart';
+import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/model/pagination/pagination.dart';
 import 'package:invasion_app/repository/character/get_characters.dart';
 import 'package:invasion_app/repository/pagination/get_pagination_info.dart';
 

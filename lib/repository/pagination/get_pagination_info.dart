@@ -1,4 +1,4 @@
-import 'package:invasion_app/model/pagination.dart';
+import 'package:invasion_app/model/pagination/pagination.dart';
 import 'package:invasion_app/repository/endpoints.dart';
 import 'package:invasion_app/repository/service_api.dart';
 import 'package:invasion_app/resources/data_types/response_data_type.dart';

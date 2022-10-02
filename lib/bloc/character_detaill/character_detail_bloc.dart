@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:invasion_app/model/character.dart';
-import 'package:invasion_app/model/character_detail.dart';
+import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/model/character/character_detail.dart';
 import 'package:invasion_app/repository/character/get_character_detail.dart';
 
 part 'character_detail_bloc.freezed.dart';

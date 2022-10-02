@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:invasion_app/model/character_reported.dart';
+import 'package:invasion_app/model/character/character_reported.dart';
 import 'package:invasion_app/repository/report/post_report.dart';
 
 part 'character_reported_bloc.freezed.dart';
