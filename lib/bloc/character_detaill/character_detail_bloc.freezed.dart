@@ -62,6 +62,8 @@ abstract class $CharacterDetailEventCopyWith<$Res> {
           $Res Function(CharacterDetailEvent) then) =
       _$CharacterDetailEventCopyWithImpl<$Res>;
   $Res call({int id, Character character});
+
+  $CharacterCopyWith<$Res> get character;
 }
 
 /// @nodoc
@@ -89,6 +91,13 @@ class _$CharacterDetailEventCopyWithImpl<$Res>
               as Character,
     ));
   }
+
+  @override
+  $CharacterCopyWith<$Res> get character {
+    return $CharacterCopyWith<$Res>(_value.character, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -99,6 +108,9 @@ abstract class _$$_SetDetailCopyWith<$Res>
       __$$_SetDetailCopyWithImpl<$Res>;
   @override
   $Res call({int id, Character character});
+
+  @override
+  $CharacterCopyWith<$Res> get character;
 }
 
 /// @nodoc
@@ -289,6 +301,7 @@ abstract class $CharacterDetailStateCopyWith<$Res> {
       _$CharacterDetailStateCopyWithImpl<$Res>;
   $Res call({Character? character, CharacterDetail? characterDetail});
 
+  $CharacterCopyWith<$Res>? get character;
   $CharacterDetailCopyWith<$Res>? get characterDetail;
 }
 
@@ -319,6 +332,17 @@ class _$CharacterDetailStateCopyWithImpl<$Res>
   }
 
   @override
+  $CharacterCopyWith<$Res>? get character {
+    if (_value.character == null) {
+      return null;
+    }
+
+    return $CharacterCopyWith<$Res>(_value.character!, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
+
+  @override
   $CharacterDetailCopyWith<$Res>? get characterDetail {
     if (_value.characterDetail == null) {
       return null;
@@ -339,6 +363,8 @@ abstract class _$$_DetailStateCopyWith<$Res>
   @override
   $Res call({Character? character, CharacterDetail? characterDetail});
 
+  @override
+  $CharacterCopyWith<$Res>? get character;
   @override
   $CharacterDetailCopyWith<$Res>? get characterDetail;
 }
