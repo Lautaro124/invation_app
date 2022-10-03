@@ -23,9 +23,8 @@ class MobileDetail extends StatelessWidget {
           title: character?.name,
           child: Container(
             width: double.infinity,
-            height: double.infinity,
             margin: const EdgeInsets.only(top: 20),
-            child: Column(
+            child: ListView(
               children: [
                 const CharacterBasicInfo(),
                 const DividerDetail(),
@@ -34,7 +33,7 @@ class MobileDetail extends StatelessWidget {
                 const StarShipInfo(),
                 const DividerDetail(),
                 const VehiclesList(),
-                ReportButton(character: character)
+                ReportButton(character: character),
               ],
             ),
           ),
