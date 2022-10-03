@@ -23,18 +23,21 @@ class MobileDetail extends StatelessWidget {
           title: character?.name,
           child: Container(
             width: double.infinity,
+            height: double.infinity,
             margin: const EdgeInsets.only(top: 20),
-            child: ListView(
-              children: [
-                const CharacterBasicInfo(),
-                const DividerDetail(),
-                const HomeWordInfo(),
-                const DividerDetail(),
-                const StarShipInfo(),
-                const DividerDetail(),
-                const VehiclesList(),
-                ReportButton(character: character),
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const CharacterBasicInfo(),
+                  const DividerDetail(),
+                  const HomeWordInfo(),
+                  const DividerDetail(),
+                  const StarShipInfo(),
+                  const DividerDetail(),
+                  const VehiclesList(),
+                  ReportButton(character: character),
+                ],
+              ),
             ),
           ),
         );

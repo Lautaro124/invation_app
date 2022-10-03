@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TextData extends StatelessWidget {
-  final String title, data;
+  final String title;
+  final String? data;
   const TextData({Key? key, required this.title, required this.data})
       : super(key: key);
 
@@ -18,7 +19,7 @@ class TextData extends StatelessWidget {
           Container(
             margin: const EdgeInsets.only(left: 10),
             child: Text(
-              data,
+              data ?? '',
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

@@ -7,19 +7,19 @@ part of 'vehicle.dart';
 // **************************************************************************
 
 _$_Vehicle _$$_VehicleFromJson(Map<String, dynamic> json) => _$_Vehicle(
-      vehicleClass: json['vehicleClass'] as String,
-      consumables: json['max_atmosphering_speed'] as String,
-      maxAtmospheringSpeed: json['maxAtmospheringSpeed'] as String,
-      model: json['model'] as String,
+      maxAtmospheringSpeed: json['max_atmosphering_speed'] as String?,
+      vehicleClass: json['vehicle_class'] as String?,
+      consumables: json['consumables'] as String?,
+      model: json['model'] as String?,
       name: json['name'] as String,
-      passengers: json['passengers'] as String,
+      passengers: json['passengers'] as String?,
     );
 
 Map<String, dynamic> _$$_VehicleToJson(_$_Vehicle instance) =>
     <String, dynamic>{
-      'vehicleClass': instance.vehicleClass,
-      'max_atmosphering_speed': instance.consumables,
-      'maxAtmospheringSpeed': instance.maxAtmospheringSpeed,
+      'max_atmosphering_speed': instance.maxAtmospheringSpeed,
+      'vehicle_class': instance.vehicleClass,
+      'consumables': instance.consumables,
       'model': instance.model,
       'name': instance.name,
       'passengers': instance.passengers,

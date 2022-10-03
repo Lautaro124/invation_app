@@ -20,14 +20,14 @@ Vehicle _$VehicleFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Vehicle {
-  String get vehicleClass => throw _privateConstructorUsedError;
   @JsonKey(name: 'max_atmosphering_speed')
+  String? get maxAtmospheringSpeed => throw _privateConstructorUsedError;
   @JsonKey(name: 'vehicle_class')
-  String get consumables => throw _privateConstructorUsedError;
-  String get maxAtmospheringSpeed => throw _privateConstructorUsedError;
-  String get model => throw _privateConstructorUsedError;
+  String? get vehicleClass => throw _privateConstructorUsedError;
+  String? get consumables => throw _privateConstructorUsedError;
+  String? get model => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get passengers => throw _privateConstructorUsedError;
+  String? get passengers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,14 +39,12 @@ abstract class $VehicleCopyWith<$Res> {
   factory $VehicleCopyWith(Vehicle value, $Res Function(Vehicle) then) =
       _$VehicleCopyWithImpl<$Res>;
   $Res call(
-      {String vehicleClass,
-      @JsonKey(name: 'max_atmosphering_speed')
-      @JsonKey(name: 'vehicle_class')
-          String consumables,
-      String maxAtmospheringSpeed,
-      String model,
+      {@JsonKey(name: 'max_atmosphering_speed') String? maxAtmospheringSpeed,
+      @JsonKey(name: 'vehicle_class') String? vehicleClass,
+      String? consumables,
+      String? model,
       String name,
-      String passengers});
+      String? passengers});
 }
 
 /// @nodoc
@@ -59,30 +57,30 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? maxAtmospheringSpeed = freezed,
     Object? vehicleClass = freezed,
     Object? consumables = freezed,
-    Object? maxAtmospheringSpeed = freezed,
     Object? model = freezed,
     Object? name = freezed,
     Object? passengers = freezed,
   }) {
     return _then(_value.copyWith(
-      vehicleClass: vehicleClass == freezed
-          ? _value.vehicleClass
-          : vehicleClass // ignore: cast_nullable_to_non_nullable
-              as String,
-      consumables: consumables == freezed
-          ? _value.consumables
-          : consumables // ignore: cast_nullable_to_non_nullable
-              as String,
       maxAtmospheringSpeed: maxAtmospheringSpeed == freezed
           ? _value.maxAtmospheringSpeed
           : maxAtmospheringSpeed // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      vehicleClass: vehicleClass == freezed
+          ? _value.vehicleClass
+          : vehicleClass // ignore: cast_nullable_to_non_nullable
+              as String?,
+      consumables: consumables == freezed
+          ? _value.consumables
+          : consumables // ignore: cast_nullable_to_non_nullable
+              as String?,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -90,7 +88,7 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
       passengers: passengers == freezed
           ? _value.passengers
           : passengers // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -102,14 +100,12 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
       __$$_VehicleCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String vehicleClass,
-      @JsonKey(name: 'max_atmosphering_speed')
-      @JsonKey(name: 'vehicle_class')
-          String consumables,
-      String maxAtmospheringSpeed,
-      String model,
+      {@JsonKey(name: 'max_atmosphering_speed') String? maxAtmospheringSpeed,
+      @JsonKey(name: 'vehicle_class') String? vehicleClass,
+      String? consumables,
+      String? model,
       String name,
-      String passengers});
+      String? passengers});
 }
 
 /// @nodoc
@@ -123,30 +119,30 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? maxAtmospheringSpeed = freezed,
     Object? vehicleClass = freezed,
     Object? consumables = freezed,
-    Object? maxAtmospheringSpeed = freezed,
     Object? model = freezed,
     Object? name = freezed,
     Object? passengers = freezed,
   }) {
     return _then(_$_Vehicle(
-      vehicleClass: vehicleClass == freezed
-          ? _value.vehicleClass
-          : vehicleClass // ignore: cast_nullable_to_non_nullable
-              as String,
-      consumables: consumables == freezed
-          ? _value.consumables
-          : consumables // ignore: cast_nullable_to_non_nullable
-              as String,
       maxAtmospheringSpeed: maxAtmospheringSpeed == freezed
           ? _value.maxAtmospheringSpeed
           : maxAtmospheringSpeed // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      vehicleClass: vehicleClass == freezed
+          ? _value.vehicleClass
+          : vehicleClass // ignore: cast_nullable_to_non_nullable
+              as String?,
+      consumables: consumables == freezed
+          ? _value.consumables
+          : consumables // ignore: cast_nullable_to_non_nullable
+              as String?,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -154,7 +150,7 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
       passengers: passengers == freezed
           ? _value.passengers
           : passengers // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -163,11 +159,11 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Vehicle implements _Vehicle {
   _$_Vehicle(
-      {required this.vehicleClass,
-      @JsonKey(name: 'max_atmosphering_speed')
+      {@JsonKey(name: 'max_atmosphering_speed')
+          required this.maxAtmospheringSpeed,
       @JsonKey(name: 'vehicle_class')
-          required this.consumables,
-      required this.maxAtmospheringSpeed,
+          required this.vehicleClass,
+      required this.consumables,
       required this.model,
       required this.name,
       required this.passengers});
@@ -176,23 +172,23 @@ class _$_Vehicle implements _Vehicle {
       _$$_VehicleFromJson(json);
 
   @override
-  final String vehicleClass;
-  @override
   @JsonKey(name: 'max_atmosphering_speed')
+  final String? maxAtmospheringSpeed;
+  @override
   @JsonKey(name: 'vehicle_class')
-  final String consumables;
+  final String? vehicleClass;
   @override
-  final String maxAtmospheringSpeed;
+  final String? consumables;
   @override
-  final String model;
+  final String? model;
   @override
   final String name;
   @override
-  final String passengers;
+  final String? passengers;
 
   @override
   String toString() {
-    return 'Vehicle(vehicleClass: $vehicleClass, consumables: $consumables, maxAtmospheringSpeed: $maxAtmospheringSpeed, model: $model, name: $name, passengers: $passengers)';
+    return 'Vehicle(maxAtmospheringSpeed: $maxAtmospheringSpeed, vehicleClass: $vehicleClass, consumables: $consumables, model: $model, name: $name, passengers: $passengers)';
   }
 
   @override
@@ -201,11 +197,11 @@ class _$_Vehicle implements _Vehicle {
         (other.runtimeType == runtimeType &&
             other is _$_Vehicle &&
             const DeepCollectionEquality()
+                .equals(other.maxAtmospheringSpeed, maxAtmospheringSpeed) &&
+            const DeepCollectionEquality()
                 .equals(other.vehicleClass, vehicleClass) &&
             const DeepCollectionEquality()
                 .equals(other.consumables, consumables) &&
-            const DeepCollectionEquality()
-                .equals(other.maxAtmospheringSpeed, maxAtmospheringSpeed) &&
             const DeepCollectionEquality().equals(other.model, model) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -216,9 +212,9 @@ class _$_Vehicle implements _Vehicle {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(maxAtmospheringSpeed),
       const DeepCollectionEquality().hash(vehicleClass),
       const DeepCollectionEquality().hash(consumables),
-      const DeepCollectionEquality().hash(maxAtmospheringSpeed),
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(passengers));
@@ -238,31 +234,31 @@ class _$_Vehicle implements _Vehicle {
 
 abstract class _Vehicle implements Vehicle {
   factory _Vehicle(
-      {required final String vehicleClass,
-      @JsonKey(name: 'max_atmosphering_speed')
+      {@JsonKey(name: 'max_atmosphering_speed')
+          required final String? maxAtmospheringSpeed,
       @JsonKey(name: 'vehicle_class')
-          required final String consumables,
-      required final String maxAtmospheringSpeed,
-      required final String model,
+          required final String? vehicleClass,
+      required final String? consumables,
+      required final String? model,
       required final String name,
-      required final String passengers}) = _$_Vehicle;
+      required final String? passengers}) = _$_Vehicle;
 
   factory _Vehicle.fromJson(Map<String, dynamic> json) = _$_Vehicle.fromJson;
 
   @override
-  String get vehicleClass;
-  @override
   @JsonKey(name: 'max_atmosphering_speed')
+  String? get maxAtmospheringSpeed;
+  @override
   @JsonKey(name: 'vehicle_class')
-  String get consumables;
+  String? get vehicleClass;
   @override
-  String get maxAtmospheringSpeed;
+  String? get consumables;
   @override
-  String get model;
+  String? get model;
   @override
   String get name;
   @override
-  String get passengers;
+  String? get passengers;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>

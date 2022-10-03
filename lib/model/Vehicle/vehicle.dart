@@ -6,14 +6,13 @@ part 'vehicle.g.dart';
 @freezed
 class Vehicle with _$Vehicle {
   factory Vehicle({
-    required String vehicleClass,
     @JsonKey(name: 'max_atmosphering_speed')
-    @JsonKey(name: 'vehicle_class')
-        required String consumables,
-    required String maxAtmospheringSpeed,
-    required String model,
+        required String? maxAtmospheringSpeed,
+    @JsonKey(name: 'vehicle_class') required String? vehicleClass,
+    required String? consumables,
+    required String? model,
     required String name,
-    required String passengers,
+    required String? passengers,
   }) = _Vehicle;
 
   factory Vehicle.fromJson(Map<String, dynamic> json) =>

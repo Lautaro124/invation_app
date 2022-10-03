@@ -21,13 +21,13 @@ Starships _$StarshipsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Starships {
   @JsonKey(name: 'hyperdrive_rating')
-  String get hyperdriveRating => throw _privateConstructorUsedError;
+  String? get hyperdriveRating => throw _privateConstructorUsedError;
   @JsonKey(name: 'starship_class')
-  String get starshipClass => throw _privateConstructorUsedError;
-  String get consumables => throw _privateConstructorUsedError;
-  String get model => throw _privateConstructorUsedError;
+  String? get starshipClass => throw _privateConstructorUsedError;
+  String? get consumables => throw _privateConstructorUsedError;
+  String? get model => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get passengers => throw _privateConstructorUsedError;
+  String? get passengers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +40,12 @@ abstract class $StarshipsCopyWith<$Res> {
   factory $StarshipsCopyWith(Starships value, $Res Function(Starships) then) =
       _$StarshipsCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'hyperdrive_rating') String hyperdriveRating,
-      @JsonKey(name: 'starship_class') String starshipClass,
-      String consumables,
-      String model,
+      {@JsonKey(name: 'hyperdrive_rating') String? hyperdriveRating,
+      @JsonKey(name: 'starship_class') String? starshipClass,
+      String? consumables,
+      String? model,
       String name,
-      String passengers});
+      String? passengers});
 }
 
 /// @nodoc
@@ -69,19 +69,19 @@ class _$StarshipsCopyWithImpl<$Res> implements $StarshipsCopyWith<$Res> {
       hyperdriveRating: hyperdriveRating == freezed
           ? _value.hyperdriveRating
           : hyperdriveRating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       starshipClass: starshipClass == freezed
           ? _value.starshipClass
           : starshipClass // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       consumables: consumables == freezed
           ? _value.consumables
           : consumables // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -89,7 +89,7 @@ class _$StarshipsCopyWithImpl<$Res> implements $StarshipsCopyWith<$Res> {
       passengers: passengers == freezed
           ? _value.passengers
           : passengers // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -101,12 +101,12 @@ abstract class _$$_StarshipsCopyWith<$Res> implements $StarshipsCopyWith<$Res> {
       __$$_StarshipsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'hyperdrive_rating') String hyperdriveRating,
-      @JsonKey(name: 'starship_class') String starshipClass,
-      String consumables,
-      String model,
+      {@JsonKey(name: 'hyperdrive_rating') String? hyperdriveRating,
+      @JsonKey(name: 'starship_class') String? starshipClass,
+      String? consumables,
+      String? model,
       String name,
-      String passengers});
+      String? passengers});
 }
 
 /// @nodoc
@@ -132,19 +132,19 @@ class __$$_StarshipsCopyWithImpl<$Res> extends _$StarshipsCopyWithImpl<$Res>
       hyperdriveRating: hyperdriveRating == freezed
           ? _value.hyperdriveRating
           : hyperdriveRating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       starshipClass: starshipClass == freezed
           ? _value.starshipClass
           : starshipClass // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       consumables: consumables == freezed
           ? _value.consumables
           : consumables // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -152,7 +152,7 @@ class __$$_StarshipsCopyWithImpl<$Res> extends _$StarshipsCopyWithImpl<$Res>
       passengers: passengers == freezed
           ? _value.passengers
           : passengers // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -173,18 +173,18 @@ class _$_Starships implements _Starships {
 
   @override
   @JsonKey(name: 'hyperdrive_rating')
-  final String hyperdriveRating;
+  final String? hyperdriveRating;
   @override
   @JsonKey(name: 'starship_class')
-  final String starshipClass;
+  final String? starshipClass;
   @override
-  final String consumables;
+  final String? consumables;
   @override
-  final String model;
+  final String? model;
   @override
   final String name;
   @override
-  final String passengers;
+  final String? passengers;
 
   @override
   String toString() {
@@ -235,31 +235,31 @@ class _$_Starships implements _Starships {
 abstract class _Starships implements Starships {
   factory _Starships(
       {@JsonKey(name: 'hyperdrive_rating')
-          required final String hyperdriveRating,
+          required final String? hyperdriveRating,
       @JsonKey(name: 'starship_class')
-          required final String starshipClass,
-      required final String consumables,
-      required final String model,
+          required final String? starshipClass,
+      required final String? consumables,
+      required final String? model,
       required final String name,
-      required final String passengers}) = _$_Starships;
+      required final String? passengers}) = _$_Starships;
 
   factory _Starships.fromJson(Map<String, dynamic> json) =
       _$_Starships.fromJson;
 
   @override
   @JsonKey(name: 'hyperdrive_rating')
-  String get hyperdriveRating;
+  String? get hyperdriveRating;
   @override
   @JsonKey(name: 'starship_class')
-  String get starshipClass;
+  String? get starshipClass;
   @override
-  String get consumables;
+  String? get consumables;
   @override
-  String get model;
+  String? get model;
   @override
   String get name;
   @override
-  String get passengers;
+  String? get passengers;
   @override
   @JsonKey(ignore: true)
   _$$_StarshipsCopyWith<_$_Starships> get copyWith =>

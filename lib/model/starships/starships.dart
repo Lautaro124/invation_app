@@ -6,12 +6,12 @@ part 'starships.g.dart';
 @freezed
 class Starships with _$Starships {
   factory Starships({
-    @JsonKey(name: 'hyperdrive_rating') required String hyperdriveRating,
-    @JsonKey(name: 'starship_class') required String starshipClass,
-    required String consumables,
-    required String model,
+    @JsonKey(name: 'hyperdrive_rating') required String? hyperdriveRating,
+    @JsonKey(name: 'starship_class') required String? starshipClass,
+    required String? consumables,
+    required String? model,
     required String name,
-    required String passengers,
+    required String? passengers,
   }) = _Starships;
 
   factory Starships.fromJson(Map<String, dynamic> json) =>

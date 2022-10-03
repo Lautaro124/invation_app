@@ -11,10 +11,13 @@ class StarShipInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterDetailBloc, CharacterDetailState>(
       builder: (context, state) {
+        print(state.starships);
+        print(state.vehicles);
+
         return Container(
           width: double.infinity,
           margin: const EdgeInsets.only(top: 10),
-          child: state.starships == null || state.starships!.isNotEmpty
+          child: state.starships == null || state.starships!.isEmpty
               ? Center(
                   child: Text(
                     'No have starships',
