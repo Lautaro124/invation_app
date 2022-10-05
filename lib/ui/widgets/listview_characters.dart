@@ -19,7 +19,8 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.75,
           child: ListView(
-            children: state.characters
+            children: state
+                .mapOrNull(setCharactersState: (value) => value.characters)!
                 .map(
                   (character) => CharacterCard(
                     character: character,

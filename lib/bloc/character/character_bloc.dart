@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/model/character/character_details.dart';
 import 'package:invasion_app/model/pagination/pagination.dart';
+import 'package:invasion_app/repository/character/get_all_details.dart';
 import 'package:invasion_app/repository/character/get_characters.dart';
 import 'package:invasion_app/repository/pagination/get_pagination_info.dart';
 
@@ -21,6 +23,19 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
           Pagination pagination = await getPaginationInfo(page);
 
           emit(CharacterState.setCharactersState(characters, pagination, page));
+        },
+        setDetail: () {
+          List<CharacterDetails> details = state
+              .mapOrNull(setCharactersState: (value) => value.characters)!
+              .map((Character character) {
+            CharacterDetails characterDetails =
+                CharacterDetails(characterName: '');
+            getCharacterDetails(character)
+                .then((value) => characterDetails = value);
+            return characterDetails;
+          }).toList();
+
+          emit(CharacterState.getDetail(details));
         },
       );
     });

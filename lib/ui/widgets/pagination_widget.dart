@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/model/pagination/pagination.dart';
 import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/pagination_buttion.dart';
 
@@ -16,21 +17,27 @@ class _PaginationWidgetState extends State<PaginationWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
+        Pagination? pagination =
+            state.mapOrNull(setCharactersState: (value) => value.pagination);
+        int currentPage = state.maybeMap(
+          setCharactersState: (value) => value.currentPage,
+          orElse: () => 1,
+        );
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               PaginationButton(
-                onTap: state.pagination.previous == null
+                onTap: pagination?.previous == null
                     ? null
-                    : () => changePage(state.currentPage - 1),
+                    : () => changePage(currentPage - 1),
                 tite: previous,
               ),
               PaginationButton(
-                onTap: state.pagination.next == null
+                onTap: pagination?.next == null
                     ? null
-                    : () => changePage(state.currentPage + 1),
+                    : () => changePage(currentPage + 1),
                 tite: next,
               ),
             ],
