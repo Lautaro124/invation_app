@@ -16,28 +16,41 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       : super(
             _SetCharactersState([], Pagination(next: '', previous: null), 1)) {
     on<CharacterEvent>(
-        (CharacterEvent event, Emitter<CharacterState> emit) async {
-      await event.when(
-        getPageInfo: (int page) async {
-          List<Character> characters = await getCharacter(page);
-          Pagination pagination = await getPaginationInfo(page);
+      (CharacterEvent event, Emitter<CharacterState> emit) async {
+        await event.when(
+          getPageInfo: (int page) async {
+            List<Character> characters = await getCharacter(page);
+            Pagination pagination = await getPaginationInfo(page);
 
-          emit(CharacterState.setCharactersState(characters, pagination, page));
-        },
-        setDetail: () {
-          List<CharacterDetails> details = state
-              .mapOrNull(setCharactersState: (value) => value.characters)!
-              .map((Character character) {
-            CharacterDetails characterDetails =
-                CharacterDetails(characterName: '');
-            getCharacterDetails(character)
-                .then((value) => characterDetails = value);
-            return characterDetails;
-          }).toList();
+            emit(CharacterState.setCharactersState(
+                characters, pagination, page));
+          },
+          setDetail: () {
+            List<CharacterDetails> details = state
+                .mapOrNull(setCharactersState: (value) => value.characters)!
+                .map((Character character) {
+              late CharacterDetails characterDetails;
+              getCharacterDetails(character)
+                  .then((value) => characterDetails = value);
 
-          emit(CharacterState.getDetail(details));
-        },
-      );
-    });
+              return characterDetails;
+            }).toList();
+
+            emit(CharacterState.getAllDetails(details));
+          },
+          searchDetail: (Character character) {
+            List<CharacterDetails> characterDetails = state.maybeMap(
+              getAllDetails: (value) => value.characterDetail,
+              orElse: () => [],
+            );
+
+            CharacterDetails characterDetail = characterDetails.firstWhere(
+                (element) => element.characterName == character.name);
+
+            emit(CharacterState.detail(character, characterDetail));
+          },
+        );
+      },
+    );
   }
 }

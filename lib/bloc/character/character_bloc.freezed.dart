@@ -20,18 +20,21 @@ mixin _$CharacterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function() setDetail,
+    required TResult Function(Character character) searchDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CharacterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SetDetail value) setDetail,
+    required TResult Function(_SearchDetail value) searchDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +146,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function() setDetail,
+    required TResult Function(Character character) searchDetail,
   }) {
     return getPageInfo(page);
   }
@@ -149,6 +156,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
   }) {
     return getPageInfo?.call(page);
   }
@@ -158,6 +166,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
     required TResult orElse(),
   }) {
     if (getPageInfo != null) {
@@ -171,6 +180,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SetDetail value) setDetail,
+    required TResult Function(_SearchDetail value) searchDetail,
   }) {
     return getPageInfo(this);
   }
@@ -180,6 +190,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
   }) {
     return getPageInfo?.call(this);
   }
@@ -189,6 +200,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
     required TResult orElse(),
   }) {
     if (getPageInfo != null) {
@@ -250,6 +262,7 @@ class _$_SetDetail implements _SetDetail {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function() setDetail,
+    required TResult Function(Character character) searchDetail,
   }) {
     return setDetail();
   }
@@ -259,6 +272,7 @@ class _$_SetDetail implements _SetDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
   }) {
     return setDetail?.call();
   }
@@ -268,6 +282,7 @@ class _$_SetDetail implements _SetDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
     required TResult orElse(),
   }) {
     if (setDetail != null) {
@@ -281,6 +296,7 @@ class _$_SetDetail implements _SetDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SetDetail value) setDetail,
+    required TResult Function(_SearchDetail value) searchDetail,
   }) {
     return setDetail(this);
   }
@@ -290,6 +306,7 @@ class _$_SetDetail implements _SetDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
   }) {
     return setDetail?.call(this);
   }
@@ -299,6 +316,7 @@ class _$_SetDetail implements _SetDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
     required TResult orElse(),
   }) {
     if (setDetail != null) {
@@ -313,13 +331,166 @@ abstract class _SetDetail implements CharacterEvent {
 }
 
 /// @nodoc
+abstract class _$$_SearchDetailCopyWith<$Res> {
+  factory _$$_SearchDetailCopyWith(
+          _$_SearchDetail value, $Res Function(_$_SearchDetail) then) =
+      __$$_SearchDetailCopyWithImpl<$Res>;
+  $Res call({Character character});
+
+  $CharacterCopyWith<$Res> get character;
+}
+
+/// @nodoc
+class __$$_SearchDetailCopyWithImpl<$Res>
+    extends _$CharacterEventCopyWithImpl<$Res>
+    implements _$$_SearchDetailCopyWith<$Res> {
+  __$$_SearchDetailCopyWithImpl(
+      _$_SearchDetail _value, $Res Function(_$_SearchDetail) _then)
+      : super(_value, (v) => _then(v as _$_SearchDetail));
+
+  @override
+  _$_SearchDetail get _value => super._value as _$_SearchDetail;
+
+  @override
+  $Res call({
+    Object? character = freezed,
+  }) {
+    return _then(_$_SearchDetail(
+      character == freezed
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character,
+    ));
+  }
+
+  @override
+  $CharacterCopyWith<$Res> get character {
+    return $CharacterCopyWith<$Res>(_value.character, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_SearchDetail implements _SearchDetail {
+  const _$_SearchDetail(this.character);
+
+  @override
+  final Character character;
+
+  @override
+  String toString() {
+    return 'CharacterEvent.searchDetail(character: $character)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchDetail &&
+            const DeepCollectionEquality().equals(other.character, character));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(character));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SearchDetailCopyWith<_$_SearchDetail> get copyWith =>
+      __$$_SearchDetailCopyWithImpl<_$_SearchDetail>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int page) getPageInfo,
+    required TResult Function() setDetail,
+    required TResult Function(Character character) searchDetail,
+  }) {
+    return searchDetail(character);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int page)? getPageInfo,
+    TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
+  }) {
+    return searchDetail?.call(character);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int page)? getPageInfo,
+    TResult Function()? setDetail,
+    TResult Function(Character character)? searchDetail,
+    required TResult orElse(),
+  }) {
+    if (searchDetail != null) {
+      return searchDetail(character);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPageInfo value) getPageInfo,
+    required TResult Function(_SetDetail value) setDetail,
+    required TResult Function(_SearchDetail value) searchDetail,
+  }) {
+    return searchDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetPageInfo value)? getPageInfo,
+    TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
+  }) {
+    return searchDetail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPageInfo value)? getPageInfo,
+    TResult Function(_SetDetail value)? setDetail,
+    TResult Function(_SearchDetail value)? searchDetail,
+    required TResult orElse(),
+  }) {
+    if (searchDetail != null) {
+      return searchDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchDetail implements CharacterEvent {
+  const factory _SearchDetail(final Character character) = _$_SearchDetail;
+
+  Character get character;
+  @JsonKey(ignore: true)
+  _$$_SearchDetailCopyWith<_$_SearchDetail> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$CharacterState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)
         setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail) getDetail,
+    required TResult Function(List<CharacterDetails> characterDetail)
+        getAllDetails,
+    required TResult Function(
+            Character character, CharacterDetails characterDetails)
+        detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -327,7 +498,9 @@ mixin _$CharacterState {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -335,26 +508,31 @@ mixin _$CharacterState {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetDetail value) getDetail,
+    required TResult Function(_GetAllDetails value) getAllDetails,
+    required TResult Function(_Detail value) detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -485,7 +663,11 @@ class _$_SetCharactersState implements _SetCharactersState {
     required TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)
         setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail) getDetail,
+    required TResult Function(List<CharacterDetails> characterDetail)
+        getAllDetails,
+    required TResult Function(
+            Character character, CharacterDetails characterDetails)
+        detail,
   }) {
     return setCharactersState(characters, pagination, currentPage);
   }
@@ -496,7 +678,9 @@ class _$_SetCharactersState implements _SetCharactersState {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
   }) {
     return setCharactersState?.call(characters, pagination, currentPage);
   }
@@ -507,7 +691,9 @@ class _$_SetCharactersState implements _SetCharactersState {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
     required TResult orElse(),
   }) {
     if (setCharactersState != null) {
@@ -520,7 +706,8 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetDetail value) getDetail,
+    required TResult Function(_GetAllDetails value) getAllDetails,
+    required TResult Function(_Detail value) detail,
   }) {
     return setCharactersState(this);
   }
@@ -529,7 +716,8 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
   }) {
     return setCharactersState?.call(this);
   }
@@ -538,7 +726,8 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
     required TResult orElse(),
   }) {
     if (setCharactersState != null) {
@@ -563,29 +752,29 @@ abstract class _SetCharactersState implements CharacterState {
 }
 
 /// @nodoc
-abstract class _$$_GetDetailCopyWith<$Res> {
-  factory _$$_GetDetailCopyWith(
-          _$_GetDetail value, $Res Function(_$_GetDetail) then) =
-      __$$_GetDetailCopyWithImpl<$Res>;
+abstract class _$$_GetAllDetailsCopyWith<$Res> {
+  factory _$$_GetAllDetailsCopyWith(
+          _$_GetAllDetails value, $Res Function(_$_GetAllDetails) then) =
+      __$$_GetAllDetailsCopyWithImpl<$Res>;
   $Res call({List<CharacterDetails> characterDetail});
 }
 
 /// @nodoc
-class __$$_GetDetailCopyWithImpl<$Res>
+class __$$_GetAllDetailsCopyWithImpl<$Res>
     extends _$CharacterStateCopyWithImpl<$Res>
-    implements _$$_GetDetailCopyWith<$Res> {
-  __$$_GetDetailCopyWithImpl(
-      _$_GetDetail _value, $Res Function(_$_GetDetail) _then)
-      : super(_value, (v) => _then(v as _$_GetDetail));
+    implements _$$_GetAllDetailsCopyWith<$Res> {
+  __$$_GetAllDetailsCopyWithImpl(
+      _$_GetAllDetails _value, $Res Function(_$_GetAllDetails) _then)
+      : super(_value, (v) => _then(v as _$_GetAllDetails));
 
   @override
-  _$_GetDetail get _value => super._value as _$_GetDetail;
+  _$_GetAllDetails get _value => super._value as _$_GetAllDetails;
 
   @override
   $Res call({
     Object? characterDetail = freezed,
   }) {
-    return _then(_$_GetDetail(
+    return _then(_$_GetAllDetails(
       characterDetail == freezed
           ? _value._characterDetail
           : characterDetail // ignore: cast_nullable_to_non_nullable
@@ -596,8 +785,8 @@ class __$$_GetDetailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GetDetail implements _GetDetail {
-  const _$_GetDetail(final List<CharacterDetails> characterDetail)
+class _$_GetAllDetails implements _GetAllDetails {
+  const _$_GetAllDetails(final List<CharacterDetails> characterDetail)
       : _characterDetail = characterDetail;
 
   final List<CharacterDetails> _characterDetail;
@@ -609,14 +798,14 @@ class _$_GetDetail implements _GetDetail {
 
   @override
   String toString() {
-    return 'CharacterState.getDetail(characterDetail: $characterDetail)';
+    return 'CharacterState.getAllDetails(characterDetail: $characterDetail)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GetDetail &&
+            other is _$_GetAllDetails &&
             const DeepCollectionEquality()
                 .equals(other._characterDetail, _characterDetail));
   }
@@ -627,8 +816,8 @@ class _$_GetDetail implements _GetDetail {
 
   @JsonKey(ignore: true)
   @override
-  _$$_GetDetailCopyWith<_$_GetDetail> get copyWith =>
-      __$$_GetDetailCopyWithImpl<_$_GetDetail>(this, _$identity);
+  _$$_GetAllDetailsCopyWith<_$_GetAllDetails> get copyWith =>
+      __$$_GetAllDetailsCopyWithImpl<_$_GetAllDetails>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -636,9 +825,13 @@ class _$_GetDetail implements _GetDetail {
     required TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)
         setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail) getDetail,
+    required TResult Function(List<CharacterDetails> characterDetail)
+        getAllDetails,
+    required TResult Function(
+            Character character, CharacterDetails characterDetails)
+        detail,
   }) {
-    return getDetail(characterDetail);
+    return getAllDetails(characterDetail);
   }
 
   @override
@@ -647,9 +840,11 @@ class _$_GetDetail implements _GetDetail {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
   }) {
-    return getDetail?.call(characterDetail);
+    return getAllDetails?.call(characterDetail);
   }
 
   @override
@@ -658,11 +853,13 @@ class _$_GetDetail implements _GetDetail {
     TResult Function(
             List<Character> characters, Pagination pagination, int currentPage)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getDetail,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
     required TResult orElse(),
   }) {
-    if (getDetail != null) {
-      return getDetail(characterDetail);
+    if (getAllDetails != null) {
+      return getAllDetails(characterDetail);
     }
     return orElse();
   }
@@ -671,40 +868,214 @@ class _$_GetDetail implements _GetDetail {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetDetail value) getDetail,
+    required TResult Function(_GetAllDetails value) getAllDetails,
+    required TResult Function(_Detail value) detail,
   }) {
-    return getDetail(this);
+    return getAllDetails(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
   }) {
-    return getDetail?.call(this);
+    return getAllDetails?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetDetail value)? getDetail,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
     required TResult orElse(),
   }) {
-    if (getDetail != null) {
-      return getDetail(this);
+    if (getAllDetails != null) {
+      return getAllDetails(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetDetail implements CharacterState {
-  const factory _GetDetail(final List<CharacterDetails> characterDetail) =
-      _$_GetDetail;
+abstract class _GetAllDetails implements CharacterState {
+  const factory _GetAllDetails(final List<CharacterDetails> characterDetail) =
+      _$_GetAllDetails;
 
   List<CharacterDetails> get characterDetail;
   @JsonKey(ignore: true)
-  _$$_GetDetailCopyWith<_$_GetDetail> get copyWith =>
+  _$$_GetAllDetailsCopyWith<_$_GetAllDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DetailCopyWith<$Res> {
+  factory _$$_DetailCopyWith(_$_Detail value, $Res Function(_$_Detail) then) =
+      __$$_DetailCopyWithImpl<$Res>;
+  $Res call({Character character, CharacterDetails characterDetails});
+
+  $CharacterCopyWith<$Res> get character;
+}
+
+/// @nodoc
+class __$$_DetailCopyWithImpl<$Res> extends _$CharacterStateCopyWithImpl<$Res>
+    implements _$$_DetailCopyWith<$Res> {
+  __$$_DetailCopyWithImpl(_$_Detail _value, $Res Function(_$_Detail) _then)
+      : super(_value, (v) => _then(v as _$_Detail));
+
+  @override
+  _$_Detail get _value => super._value as _$_Detail;
+
+  @override
+  $Res call({
+    Object? character = freezed,
+    Object? characterDetails = freezed,
+  }) {
+    return _then(_$_Detail(
+      character == freezed
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character,
+      characterDetails == freezed
+          ? _value.characterDetails
+          : characterDetails // ignore: cast_nullable_to_non_nullable
+              as CharacterDetails,
+    ));
+  }
+
+  @override
+  $CharacterCopyWith<$Res> get character {
+    return $CharacterCopyWith<$Res>(_value.character, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Detail implements _Detail {
+  const _$_Detail(this.character, this.characterDetails);
+
+  @override
+  final Character character;
+  @override
+  final CharacterDetails characterDetails;
+
+  @override
+  String toString() {
+    return 'CharacterState.detail(character: $character, characterDetails: $characterDetails)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Detail &&
+            const DeepCollectionEquality().equals(other.character, character) &&
+            const DeepCollectionEquality()
+                .equals(other.characterDetails, characterDetails));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(character),
+      const DeepCollectionEquality().hash(characterDetails));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DetailCopyWith<_$_Detail> get copyWith =>
+      __$$_DetailCopyWithImpl<_$_Detail>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            List<Character> characters, Pagination pagination, int currentPage)
+        setCharactersState,
+    required TResult Function(List<CharacterDetails> characterDetail)
+        getAllDetails,
+    required TResult Function(
+            Character character, CharacterDetails characterDetails)
+        detail,
+  }) {
+    return detail(character, characterDetails);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(
+            List<Character> characters, Pagination pagination, int currentPage)?
+        setCharactersState,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
+  }) {
+    return detail?.call(character, characterDetails);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            List<Character> characters, Pagination pagination, int currentPage)?
+        setCharactersState,
+    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
+    TResult Function(Character character, CharacterDetails characterDetails)?
+        detail,
+    required TResult orElse(),
+  }) {
+    if (detail != null) {
+      return detail(character, characterDetails);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SetCharactersState value) setCharactersState,
+    required TResult Function(_GetAllDetails value) getAllDetails,
+    required TResult Function(_Detail value) detail,
+  }) {
+    return detail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SetCharactersState value)? setCharactersState,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
+  }) {
+    return detail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SetCharactersState value)? setCharactersState,
+    TResult Function(_GetAllDetails value)? getAllDetails,
+    TResult Function(_Detail value)? detail,
+    required TResult orElse(),
+  }) {
+    if (detail != null) {
+      return detail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Detail implements CharacterState {
+  const factory _Detail(
+          final Character character, final CharacterDetails characterDetails) =
+      _$_Detail;
+
+  Character get character;
+  CharacterDetails get characterDetails;
+  @JsonKey(ignore: true)
+  _$$_DetailCopyWith<_$_Detail> get copyWith =>
       throw _privateConstructorUsedError;
 }

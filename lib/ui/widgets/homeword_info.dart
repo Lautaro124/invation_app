@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
+import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/model/homeword/home_word.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
 class HomeWordInfo extends StatelessWidget {
@@ -8,8 +9,13 @@ class HomeWordInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharacterDetailBloc, CharacterDetailState>(
+    return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
+        final HomeWord? homeWord = state.maybeMap(
+          detail: (value) => value.characterDetails.homeWord,
+          orElse: () => null,
+        );
+
         return Container(
           width: double.infinity,
           padding: const EdgeInsets.all(5),
@@ -26,15 +32,15 @@ class HomeWordInfo extends StatelessWidget {
                       children: [
                         TextData(
                           title: 'Name',
-                          data: state.homeWord?.name ?? '',
+                          data: homeWord?.name ?? '',
                         ),
                         TextData(
                           title: 'Population',
-                          data: state.homeWord?.population ?? '',
+                          data: homeWord?.population ?? '',
                         ),
                         TextData(
                           title: 'Diameter',
-                          data: state.homeWord?.diameter ?? '',
+                          data: homeWord?.diameter ?? '',
                         ),
                       ],
                     ),
@@ -44,15 +50,15 @@ class HomeWordInfo extends StatelessWidget {
                       children: [
                         TextData(
                           title: 'Terrain',
-                          data: state.homeWord?.terrain ?? '',
+                          data: homeWord?.terrain ?? '',
                         ),
                         TextData(
                           title: 'Climate',
-                          data: state.homeWord?.climate ?? '',
+                          data: homeWord?.climate ?? '',
                         ),
                         TextData(
                           title: 'Rotation period',
-                          data: state.homeWord?.rotationPeriod ?? '',
+                          data: homeWord?.rotationPeriod ?? '',
                         ),
                       ],
                     ),

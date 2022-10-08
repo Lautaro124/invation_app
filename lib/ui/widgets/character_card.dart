@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
+import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
-import 'package:invasion_app/repository/service/service_api_utils.dart';
 import 'package:invasion_app/resources/enum/navigation_routes.dart';
 
 class CharacterCard extends StatefulWidget {
@@ -25,11 +24,8 @@ class _CharacterCardState extends State<CharacterCard> {
 
   void detailEvent() {
     Character character = widget.character;
-    int id = getIdToUrl(character.detailUrl);
 
-    context
-        .read<CharacterDetailBloc>()
-        .add(CharacterDetailEvent.setDetail(id, character));
+    context.read<CharacterBloc>().add(CharacterEvent.searchDetail(character));
     goDetailScreen();
   }
 

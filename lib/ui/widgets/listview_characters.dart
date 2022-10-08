@@ -15,18 +15,21 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
+        final characters =
+            state.mapOrNull(setCharactersState: (value) => value.characters);
         return SizedBox(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.75,
           child: ListView(
-            children: state
-                .mapOrNull(setCharactersState: (value) => value.characters)!
-                .map(
-                  (character) => CharacterCard(
-                    character: character,
-                  ),
-                )
-                .toList(),
+            children: characters == null
+                ? []
+                : characters
+                    .map(
+                      (character) => CharacterCard(
+                        character: character,
+                      ),
+                    )
+                    .toList(),
           ),
         );
       },

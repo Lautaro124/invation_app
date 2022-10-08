@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
+import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -9,12 +9,16 @@ class VehiclesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharacterDetailBloc, CharacterDetailState>(
+    return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
+        final vehiclesList = state.mapOrNull(
+          detail: (value) => value.characterDetails.vehicles,
+        );
+
         return Container(
           width: double.infinity,
           margin: const EdgeInsets.only(top: 10),
-          child: state.vehicles == null || state.vehicles!.isEmpty
+          child: vehiclesList == null || vehiclesList.isEmpty
               ? Center(
                   child: Text(
                     'No have vehicles',
@@ -22,7 +26,7 @@ class VehiclesList extends StatelessWidget {
                   ),
                 )
               : Row(
-                  children: state.vehicles!
+                  children: vehiclesList
                       .map(
                         (vehicle) => DetailInfoBlock(
                           left: [

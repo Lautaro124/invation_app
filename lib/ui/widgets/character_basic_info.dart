@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:invasion_app/bloc/character_detaill/character_detail_bloc.dart';
+import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -9,31 +9,35 @@ class CharacterBasicInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharacterDetailBloc, CharacterDetailState>(
+    return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
+        final characterDetail = state.mapOrNull(
+          detail: (value) => value.character,
+        );
+
         return DetailInfoBlock(
           left: [
             TextData(
               title: 'Birth year',
-              data: state.characterDetail?.birthYear ?? '',
+              data: characterDetail?.birthYear ?? '',
             ),
             TextData(
               title: 'Hair color',
-              data: state.characterDetail?.hairColor ?? '',
+              data: characterDetail?.hairColor ?? '',
             ),
             TextData(
               title: 'Eyes color',
-              data: state.characterDetail?.eyeColor ?? '',
+              data: characterDetail?.eyeColor ?? '',
             ),
           ],
           rigth: [
             TextData(
               title: 'Height',
-              data: state.characterDetail?.height ?? '',
+              data: characterDetail?.height ?? '',
             ),
             TextData(
               title: 'Mass',
-              data: state.characterDetail?.mass ?? '',
+              data: characterDetail?.mass ?? '',
             ),
           ],
         );
