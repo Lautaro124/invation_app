@@ -1,5 +1,5 @@
 import 'package:invasion_app/model/starships/starships.dart';
-import 'package:invasion_app/repository/service_api.dart';
+import 'package:invasion_app/repository/service/service_api.dart';
 import 'package:invasion_app/resources/data_types/response_data_type.dart';
 
 Future<List<Starships>> getStarships(List<String> starshipsListUrl) async {

@@ -7,4 +7,11 @@ class CharacterState with _$CharacterState {
     Pagination pagination,
     int currentPage,
   ) = _SetCharactersState;
+  const factory CharacterState.getAllDetails(
+    List<CharacterDetails> characterDetail,
+  ) = _GetAllDetails;
+  const factory CharacterState.detail(
+    Character character,
+    CharacterDetails characterDetails,
+  ) = _Detail;
 }

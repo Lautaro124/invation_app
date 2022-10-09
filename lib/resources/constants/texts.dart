@@ -1,1 +1,1 @@
-const String next = 'Next', previous = 'Previous', invasion = 'Invasion';
+const String next = 'Next', previous = 'Previous', invasion = 'invasion';

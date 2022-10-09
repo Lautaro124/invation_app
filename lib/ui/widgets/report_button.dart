@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
 import 'package:invasion_app/model/character/character_reported.dart';
-import 'package:invasion_app/resources/utils/get_url_id.dart';
+import 'package:invasion_app/repository/service/service_api_utils.dart';
 import 'package:invasion_app/ui/widgets/dialog_report_status.dart';
 
 class ReportButton extends StatefulWidget {
