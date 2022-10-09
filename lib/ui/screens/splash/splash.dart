@@ -5,7 +5,8 @@ import 'package:invasion_app/resources/enum/navigation_routes.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  final bool? runEvent;
+  const SplashScreen({Key? key, this.runEvent}) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    events();
+    widget.runEvent ?? events();
   }
 
   @override

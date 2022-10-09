@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/ui/screens/splash/splash.dart';
 import 'package:invasion_app/ui/widgets/character_basic_info.dart';
 import 'package:invasion_app/ui/widgets/divider_detail.dart';
 import 'package:invasion_app/ui/widgets/homeword_info.dart';
@@ -31,8 +32,12 @@ class _MobileDetailState extends State<MobileDetail> {
       builder: (context, state) {
         final Character? character = state.character;
 
+        if (character == null) {
+          return const SplashScreen(runEvent: false);
+        }
+
         return ScreenBase(
-          title: character?.name,
+          title: character.name,
           child: Container(
             width: double.infinity,
             height: double.infinity,
