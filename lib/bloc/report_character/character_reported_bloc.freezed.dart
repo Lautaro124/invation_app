@@ -355,28 +355,30 @@ abstract class _ChangeConection implements CharacterReportedEvent {
 
 /// @nodoc
 mixin _$CharacterReportedState {
+  bool get isConected => throw _privateConstructorUsedError;
   CharacterReported? get characterReported =>
       throw _privateConstructorUsedError;
   Map<String, String>? get requestStatus => throw _privateConstructorUsedError;
-  bool get isConected => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)
+    required TResult Function(
+            bool isConected,
+            CharacterReported? characterReported,
+            Map<String, String>? requestStatus)
         report,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
     required TResult orElse(),
   }) =>
@@ -409,9 +411,9 @@ abstract class $CharacterReportedStateCopyWith<$Res> {
           $Res Function(CharacterReportedState) then) =
       _$CharacterReportedStateCopyWithImpl<$Res>;
   $Res call(
-      {CharacterReported? characterReported,
-      Map<String, String>? requestStatus,
-      bool isConected});
+      {bool isConected,
+      CharacterReported? characterReported,
+      Map<String, String>? requestStatus});
 
   $CharacterReportedCopyWith<$Res>? get characterReported;
 }
@@ -427,11 +429,15 @@ class _$CharacterReportedStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isConected = freezed,
     Object? characterReported = freezed,
     Object? requestStatus = freezed,
-    Object? isConected = freezed,
   }) {
     return _then(_value.copyWith(
+      isConected: isConected == freezed
+          ? _value.isConected
+          : isConected // ignore: cast_nullable_to_non_nullable
+              as bool,
       characterReported: characterReported == freezed
           ? _value.characterReported
           : characterReported // ignore: cast_nullable_to_non_nullable
@@ -440,10 +446,6 @@ class _$CharacterReportedStateCopyWithImpl<$Res>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      isConected: isConected == freezed
-          ? _value.isConected
-          : isConected // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 
@@ -466,9 +468,9 @@ abstract class _$$_ReportCopyWith<$Res>
       __$$_ReportCopyWithImpl<$Res>;
   @override
   $Res call(
-      {CharacterReported? characterReported,
-      Map<String, String>? requestStatus,
-      bool isConected});
+      {bool isConected,
+      CharacterReported? characterReported,
+      Map<String, String>? requestStatus});
 
   @override
   $CharacterReportedCopyWith<$Res>? get characterReported;
@@ -486,23 +488,23 @@ class __$$_ReportCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isConected = freezed,
     Object? characterReported = freezed,
     Object? requestStatus = freezed,
-    Object? isConected = freezed,
   }) {
     return _then(_$_Report(
-      characterReported == freezed
-          ? _value.characterReported
-          : characterReported // ignore: cast_nullable_to_non_nullable
-              as CharacterReported?,
-      requestStatus == freezed
-          ? _value._requestStatus
-          : requestStatus // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
       isConected == freezed
           ? _value.isConected
           : isConected // ignore: cast_nullable_to_non_nullable
               as bool,
+      characterReported: characterReported == freezed
+          ? _value.characterReported
+          : characterReported // ignore: cast_nullable_to_non_nullable
+              as CharacterReported?,
+      requestStatus: requestStatus == freezed
+          ? _value._requestStatus
+          : requestStatus // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
@@ -510,10 +512,12 @@ class __$$_ReportCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Report implements _Report {
-  const _$_Report(this.characterReported,
-      final Map<String, String>? requestStatus, this.isConected)
+  const _$_Report(this.isConected,
+      {this.characterReported, final Map<String, String>? requestStatus})
       : _requestStatus = requestStatus;
 
+  @override
+  final bool isConected;
   @override
   final CharacterReported? characterReported;
   final Map<String, String>? _requestStatus;
@@ -526,11 +530,8 @@ class _$_Report implements _Report {
   }
 
   @override
-  final bool isConected;
-
-  @override
   String toString() {
-    return 'CharacterReportedState.report(characterReported: $characterReported, requestStatus: $requestStatus, isConected: $isConected)';
+    return 'CharacterReportedState.report(isConected: $isConected, characterReported: $characterReported, requestStatus: $requestStatus)';
   }
 
   @override
@@ -539,19 +540,19 @@ class _$_Report implements _Report {
         (other.runtimeType == runtimeType &&
             other is _$_Report &&
             const DeepCollectionEquality()
+                .equals(other.isConected, isConected) &&
+            const DeepCollectionEquality()
                 .equals(other.characterReported, characterReported) &&
             const DeepCollectionEquality()
-                .equals(other._requestStatus, _requestStatus) &&
-            const DeepCollectionEquality()
-                .equals(other.isConected, isConected));
+                .equals(other._requestStatus, _requestStatus));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(isConected),
       const DeepCollectionEquality().hash(characterReported),
-      const DeepCollectionEquality().hash(_requestStatus),
-      const DeepCollectionEquality().hash(isConected));
+      const DeepCollectionEquality().hash(_requestStatus));
 
   @JsonKey(ignore: true)
   @override
@@ -561,33 +562,35 @@ class _$_Report implements _Report {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)
+    required TResult Function(
+            bool isConected,
+            CharacterReported? characterReported,
+            Map<String, String>? requestStatus)
         report,
   }) {
-    return report(characterReported, requestStatus, isConected);
+    return report(isConected, characterReported, requestStatus);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
   }) {
-    return report?.call(characterReported, requestStatus, isConected);
+    return report?.call(isConected, characterReported, requestStatus);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
     required TResult orElse(),
   }) {
     if (report != null) {
-      return report(characterReported, requestStatus, isConected);
+      return report(isConected, characterReported, requestStatus);
     }
     return orElse();
   }
@@ -622,17 +625,16 @@ class _$_Report implements _Report {
 }
 
 abstract class _Report implements CharacterReportedState {
-  const factory _Report(
-      final CharacterReported? characterReported,
-      final Map<String, String>? requestStatus,
-      final bool isConected) = _$_Report;
+  const factory _Report(final bool isConected,
+      {final CharacterReported? characterReported,
+      final Map<String, String>? requestStatus}) = _$_Report;
 
+  @override
+  bool get isConected;
   @override
   CharacterReported? get characterReported;
   @override
   Map<String, String>? get requestStatus;
-  @override
-  bool get isConected;
   @override
   @JsonKey(ignore: true)
   _$$_ReportCopyWith<_$_Report> get copyWith =>

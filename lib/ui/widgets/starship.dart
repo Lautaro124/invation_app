@@ -14,17 +14,18 @@ class StarShipInfo extends StatelessWidget {
       builder: (context, state) {
         final List<Starships>? starShips = state.characterDetails?.starships;
 
-        return Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 10),
-          child: starShips == null || starShips.isEmpty
-              ? Center(
-                  child: Text(
-                    'No have starships',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                )
-              : Column(
+        return starShips == null || starShips.isEmpty
+            ? Center(
+                child: Text(
+                  'No have starships',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              )
+            : Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.7,
+                margin: const EdgeInsets.only(top: 10),
+                child: Column(
                   children: [
                     Text(
                       'Starships',
@@ -60,7 +61,7 @@ class StarShipInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-        );
+              );
       },
     );
   }

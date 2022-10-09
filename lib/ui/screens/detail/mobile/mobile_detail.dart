@@ -40,14 +40,15 @@ class _MobileDetailState extends State<MobileDetail> {
           title: character.name,
           child: Container(
             width: double.infinity,
-            height: double.infinity,
+            height: MediaQuery.of(context).size.height,
             margin: const EdgeInsets.only(top: 20),
             child: ListView(
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.74,
+                  height: MediaQuery.of(context).size.height * 0.743,
                   child: ListView.separated(
+                    shrinkWrap: true,
                     itemBuilder: (context, index) => widgetsDetail[index],
                     separatorBuilder: (context, index) => const DividerDetail(),
                     itemCount: widgetsDetail.length,

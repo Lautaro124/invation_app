@@ -23,23 +23,23 @@ class _ReportButtonState extends State<ReportButton> {
           style: ElevatedButton.styleFrom(
             primary: Theme.of(context).errorColor,
           ),
-          onPressed: !state.isConected ? null : () => event(state.isConected),
+          onPressed: !state.isConected ? null : () => event(widget.character),
           child: const Text('Report'),
         );
       },
     );
   }
 
-  void event(bool isConected) {
-    if (widget.character == null) return;
+  void event(Character? character) {
+    if (character == null) return;
 
-    String userId = getIdToUrl(widget.character?.detailUrl ?? '').toString();
+    String userId = getIdToUrl(character.detailUrl).toString();
 
     context
         .read<CharacterReportedBloc>()
         .add(CharacterReportedEvent.sendReport(CharacterReported(
           userId: userId,
-          characterName: widget.character?.name,
+          characterName: character.name,
           dateTime: DateTime.now(),
         )));
     dialog();

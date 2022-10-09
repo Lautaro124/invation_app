@@ -4,4 +4,5 @@ part of 'character_bloc.dart';
 class CharacterEvent with _$CharacterEvent {
   const factory CharacterEvent.getPageInfo(int page) = _GetPageInfo;
   const factory CharacterEvent.getDetail(Character character) = _SearchDetail;
+  const factory CharacterEvent.clearDetail() = _ClearDetail;
 }

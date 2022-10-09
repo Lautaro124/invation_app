@@ -14,17 +14,18 @@ class VehiclesList extends StatelessWidget {
       builder: (context, state) {
         final List<Vehicle>? vehiclesList = state.characterDetails?.vehicles;
 
-        return Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 10),
-          child: vehiclesList == null || vehiclesList.isEmpty
-              ? Center(
-                  child: Text(
-                    'No have vehicles',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                )
-              : Row(
+        return vehiclesList == null || vehiclesList.isEmpty
+            ? Center(
+                child: Text(
+                  'No have vehicles',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+              )
+            : Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.4,
+                margin: const EdgeInsets.only(top: 10),
+                child: Row(
                   children: vehiclesList
                       .map(
                         (vehicle) => DetailInfoBlock(
@@ -60,7 +61,7 @@ class VehiclesList extends StatelessWidget {
                       )
                       .toList(),
                 ),
-        );
+              );
       },
     );
   }

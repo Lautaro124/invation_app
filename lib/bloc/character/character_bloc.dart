@@ -17,6 +17,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
             _SetCharactersState([], Pagination(next: '', previous: null), 1)) {
     on<CharacterEvent>(
       (CharacterEvent event, Emitter<CharacterState> emit) async {
+        // ignore: await_only_futures
         await event.when(
           getPageInfo: (int page) async {
             List<Character> characters = await getCharacter(page);
@@ -27,6 +28,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
               pagination,
               page,
             ));
+            return;
           },
           getDetail: (Character character) async {
             CharacterDetails characterDetail =
@@ -39,6 +41,19 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
               character: character,
               characterDetails: characterDetail,
             ));
+            return;
+          },
+          clearDetail: () {
+            emit(
+              CharacterState.setCharactersState(
+                state.characters,
+                state.pagination,
+                state.currentPage,
+                character: null,
+                characterDetails: null,
+              ),
+            );
+            return;
           },
         );
       },
