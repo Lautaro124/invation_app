@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/model/starships/starships.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -11,9 +12,7 @@ class StarShipInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
-        final starShips = state.mapOrNull(
-          detail: (value) => value.characterDetails.starships,
-        );
+        final List<Starships>? starShips = state.characterDetails?.starships;
 
         return Container(
           width: double.infinity,

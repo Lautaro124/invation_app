@@ -29,10 +29,7 @@ class _MobileDetailState extends State<MobileDetail> {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
-        final Character? character = state.maybeMap(
-          detail: (value) => value.character,
-          orElse: () => null,
-        );
+        final Character? character = state.character;
 
         return ScreenBase(
           title: character?.name,

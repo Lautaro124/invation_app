@@ -11,10 +11,7 @@ class HomeWordInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
-        final HomeWord? homeWord = state.maybeMap(
-          detail: (value) => value.characterDetails.homeWord,
-          orElse: () => null,
-        );
+        final HomeWord? homeWord = state.characterDetails?.homeWord;
 
         return Container(
           width: double.infinity,

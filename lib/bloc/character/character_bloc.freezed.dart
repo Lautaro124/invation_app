@@ -352,60 +352,64 @@ abstract class _SearchDetail implements CharacterEvent {
 
 /// @nodoc
 mixin _$CharacterState {
+  List<Character> get characters => throw _privateConstructorUsedError;
+  Pagination get pagination => throw _privateConstructorUsedError;
+  int get currentPage => throw _privateConstructorUsedError;
+  Character? get character => throw _privateConstructorUsedError;
+  CharacterDetails? get characterDetails => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)
         setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail)
-        getAllDetails,
-    required TResult Function(
-            Character character, CharacterDetails characterDetails)
-        detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetAllDetails value) getAllDetails,
-    required TResult Function(_Detail value) detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CharacterStateCopyWith<CharacterState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -414,6 +418,15 @@ abstract class $CharacterStateCopyWith<$Res> {
   factory $CharacterStateCopyWith(
           CharacterState value, $Res Function(CharacterState) then) =
       _$CharacterStateCopyWithImpl<$Res>;
+  $Res call(
+      {List<Character> characters,
+      Pagination pagination,
+      int currentPage,
+      Character? character,
+      CharacterDetails? characterDetails});
+
+  $PaginationCopyWith<$Res> get pagination;
+  $CharacterCopyWith<$Res>? get character;
 }
 
 /// @nodoc
@@ -424,17 +437,76 @@ class _$CharacterStateCopyWithImpl<$Res>
   final CharacterState _value;
   // ignore: unused_field
   final $Res Function(CharacterState) _then;
+
+  @override
+  $Res call({
+    Object? characters = freezed,
+    Object? pagination = freezed,
+    Object? currentPage = freezed,
+    Object? character = freezed,
+    Object? characterDetails = freezed,
+  }) {
+    return _then(_value.copyWith(
+      characters: characters == freezed
+          ? _value.characters
+          : characters // ignore: cast_nullable_to_non_nullable
+              as List<Character>,
+      pagination: pagination == freezed
+          ? _value.pagination
+          : pagination // ignore: cast_nullable_to_non_nullable
+              as Pagination,
+      currentPage: currentPage == freezed
+          ? _value.currentPage
+          : currentPage // ignore: cast_nullable_to_non_nullable
+              as int,
+      character: character == freezed
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character?,
+      characterDetails: characterDetails == freezed
+          ? _value.characterDetails
+          : characterDetails // ignore: cast_nullable_to_non_nullable
+              as CharacterDetails?,
+    ));
+  }
+
+  @override
+  $PaginationCopyWith<$Res> get pagination {
+    return $PaginationCopyWith<$Res>(_value.pagination, (value) {
+      return _then(_value.copyWith(pagination: value));
+    });
+  }
+
+  @override
+  $CharacterCopyWith<$Res>? get character {
+    if (_value.character == null) {
+      return null;
+    }
+
+    return $CharacterCopyWith<$Res>(_value.character!, (value) {
+      return _then(_value.copyWith(character: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$_SetCharactersStateCopyWith<$Res> {
+abstract class _$$_SetCharactersStateCopyWith<$Res>
+    implements $CharacterStateCopyWith<$Res> {
   factory _$$_SetCharactersStateCopyWith(_$_SetCharactersState value,
           $Res Function(_$_SetCharactersState) then) =
       __$$_SetCharactersStateCopyWithImpl<$Res>;
+  @override
   $Res call(
-      {List<Character> characters, Pagination pagination, int currentPage});
+      {List<Character> characters,
+      Pagination pagination,
+      int currentPage,
+      Character? character,
+      CharacterDetails? characterDetails});
 
+  @override
   $PaginationCopyWith<$Res> get pagination;
+  @override
+  $CharacterCopyWith<$Res>? get character;
 }
 
 /// @nodoc
@@ -453,6 +525,8 @@ class __$$_SetCharactersStateCopyWithImpl<$Res>
     Object? characters = freezed,
     Object? pagination = freezed,
     Object? currentPage = freezed,
+    Object? character = freezed,
+    Object? characterDetails = freezed,
   }) {
     return _then(_$_SetCharactersState(
       characters == freezed
@@ -467,14 +541,15 @@ class __$$_SetCharactersStateCopyWithImpl<$Res>
           ? _value.currentPage
           : currentPage // ignore: cast_nullable_to_non_nullable
               as int,
+      character: character == freezed
+          ? _value.character
+          : character // ignore: cast_nullable_to_non_nullable
+              as Character?,
+      characterDetails: characterDetails == freezed
+          ? _value.characterDetails
+          : characterDetails // ignore: cast_nullable_to_non_nullable
+              as CharacterDetails?,
     ));
-  }
-
-  @override
-  $PaginationCopyWith<$Res> get pagination {
-    return $PaginationCopyWith<$Res>(_value.pagination, (value) {
-      return _then(_value.copyWith(pagination: value));
-    });
   }
 }
 
@@ -482,7 +557,8 @@ class __$$_SetCharactersStateCopyWithImpl<$Res>
 
 class _$_SetCharactersState implements _SetCharactersState {
   const _$_SetCharactersState(
-      final List<Character> characters, this.pagination, this.currentPage)
+      final List<Character> characters, this.pagination, this.currentPage,
+      {this.character, this.characterDetails})
       : _characters = characters;
 
   final List<Character> _characters;
@@ -496,10 +572,14 @@ class _$_SetCharactersState implements _SetCharactersState {
   final Pagination pagination;
   @override
   final int currentPage;
+  @override
+  final Character? character;
+  @override
+  final CharacterDetails? characterDetails;
 
   @override
   String toString() {
-    return 'CharacterState.setCharactersState(characters: $characters, pagination: $pagination, currentPage: $currentPage)';
+    return 'CharacterState.setCharactersState(characters: $characters, pagination: $pagination, currentPage: $currentPage, character: $character, characterDetails: $characterDetails)';
   }
 
   @override
@@ -512,7 +592,10 @@ class _$_SetCharactersState implements _SetCharactersState {
             const DeepCollectionEquality()
                 .equals(other.pagination, pagination) &&
             const DeepCollectionEquality()
-                .equals(other.currentPage, currentPage));
+                .equals(other.currentPage, currentPage) &&
+            const DeepCollectionEquality().equals(other.character, character) &&
+            const DeepCollectionEquality()
+                .equals(other.characterDetails, characterDetails));
   }
 
   @override
@@ -520,7 +603,9 @@ class _$_SetCharactersState implements _SetCharactersState {
       runtimeType,
       const DeepCollectionEquality().hash(_characters),
       const DeepCollectionEquality().hash(pagination),
-      const DeepCollectionEquality().hash(currentPage));
+      const DeepCollectionEquality().hash(currentPage),
+      const DeepCollectionEquality().hash(character),
+      const DeepCollectionEquality().hash(characterDetails));
 
   @JsonKey(ignore: true)
   @override
@@ -532,43 +617,47 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)
         setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail)
-        getAllDetails,
-    required TResult Function(
-            Character character, CharacterDetails characterDetails)
-        detail,
   }) {
-    return setCharactersState(characters, pagination, currentPage);
+    return setCharactersState(
+        characters, pagination, currentPage, character, characterDetails);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
   }) {
-    return setCharactersState?.call(characters, pagination, currentPage);
+    return setCharactersState?.call(
+        characters, pagination, currentPage, character, characterDetails);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
+            List<Character> characters,
+            Pagination pagination,
+            int currentPage,
+            Character? character,
+            CharacterDetails? characterDetails)?
         setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
     required TResult orElse(),
   }) {
     if (setCharactersState != null) {
-      return setCharactersState(characters, pagination, currentPage);
+      return setCharactersState(
+          characters, pagination, currentPage, character, characterDetails);
     }
     return orElse();
   }
@@ -577,8 +666,6 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetAllDetails value) getAllDetails,
-    required TResult Function(_Detail value) detail,
   }) {
     return setCharactersState(this);
   }
@@ -587,8 +674,6 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
   }) {
     return setCharactersState?.call(this);
   }
@@ -597,8 +682,6 @@ class _$_SetCharactersState implements _SetCharactersState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
     required TResult orElse(),
   }) {
     if (setCharactersState != null) {
@@ -609,344 +692,23 @@ class _$_SetCharactersState implements _SetCharactersState {
 }
 
 abstract class _SetCharactersState implements CharacterState {
-  const factory _SetCharactersState(
-      final List<Character> characters,
-      final Pagination pagination,
-      final int currentPage) = _$_SetCharactersState;
+  const factory _SetCharactersState(final List<Character> characters,
+      final Pagination pagination, final int currentPage,
+      {final Character? character,
+      final CharacterDetails? characterDetails}) = _$_SetCharactersState;
 
+  @override
   List<Character> get characters;
+  @override
   Pagination get pagination;
+  @override
   int get currentPage;
+  @override
+  Character? get character;
+  @override
+  CharacterDetails? get characterDetails;
+  @override
   @JsonKey(ignore: true)
   _$$_SetCharactersStateCopyWith<_$_SetCharactersState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_GetAllDetailsCopyWith<$Res> {
-  factory _$$_GetAllDetailsCopyWith(
-          _$_GetAllDetails value, $Res Function(_$_GetAllDetails) then) =
-      __$$_GetAllDetailsCopyWithImpl<$Res>;
-  $Res call({List<CharacterDetails> characterDetail});
-}
-
-/// @nodoc
-class __$$_GetAllDetailsCopyWithImpl<$Res>
-    extends _$CharacterStateCopyWithImpl<$Res>
-    implements _$$_GetAllDetailsCopyWith<$Res> {
-  __$$_GetAllDetailsCopyWithImpl(
-      _$_GetAllDetails _value, $Res Function(_$_GetAllDetails) _then)
-      : super(_value, (v) => _then(v as _$_GetAllDetails));
-
-  @override
-  _$_GetAllDetails get _value => super._value as _$_GetAllDetails;
-
-  @override
-  $Res call({
-    Object? characterDetail = freezed,
-  }) {
-    return _then(_$_GetAllDetails(
-      characterDetail == freezed
-          ? _value._characterDetail
-          : characterDetail // ignore: cast_nullable_to_non_nullable
-              as List<CharacterDetails>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_GetAllDetails implements _GetAllDetails {
-  const _$_GetAllDetails(final List<CharacterDetails> characterDetail)
-      : _characterDetail = characterDetail;
-
-  final List<CharacterDetails> _characterDetail;
-  @override
-  List<CharacterDetails> get characterDetail {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_characterDetail);
-  }
-
-  @override
-  String toString() {
-    return 'CharacterState.getAllDetails(characterDetail: $characterDetail)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_GetAllDetails &&
-            const DeepCollectionEquality()
-                .equals(other._characterDetail, _characterDetail));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_characterDetail));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_GetAllDetailsCopyWith<_$_GetAllDetails> get copyWith =>
-      __$$_GetAllDetailsCopyWithImpl<_$_GetAllDetails>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)
-        setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail)
-        getAllDetails,
-    required TResult Function(
-            Character character, CharacterDetails characterDetails)
-        detail,
-  }) {
-    return getAllDetails(characterDetail);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
-        setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
-  }) {
-    return getAllDetails?.call(characterDetail);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
-        setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
-    required TResult orElse(),
-  }) {
-    if (getAllDetails != null) {
-      return getAllDetails(characterDetail);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetAllDetails value) getAllDetails,
-    required TResult Function(_Detail value) detail,
-  }) {
-    return getAllDetails(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
-  }) {
-    return getAllDetails?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
-    required TResult orElse(),
-  }) {
-    if (getAllDetails != null) {
-      return getAllDetails(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetAllDetails implements CharacterState {
-  const factory _GetAllDetails(final List<CharacterDetails> characterDetail) =
-      _$_GetAllDetails;
-
-  List<CharacterDetails> get characterDetail;
-  @JsonKey(ignore: true)
-  _$$_GetAllDetailsCopyWith<_$_GetAllDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_DetailCopyWith<$Res> {
-  factory _$$_DetailCopyWith(_$_Detail value, $Res Function(_$_Detail) then) =
-      __$$_DetailCopyWithImpl<$Res>;
-  $Res call({Character character, CharacterDetails characterDetails});
-
-  $CharacterCopyWith<$Res> get character;
-}
-
-/// @nodoc
-class __$$_DetailCopyWithImpl<$Res> extends _$CharacterStateCopyWithImpl<$Res>
-    implements _$$_DetailCopyWith<$Res> {
-  __$$_DetailCopyWithImpl(_$_Detail _value, $Res Function(_$_Detail) _then)
-      : super(_value, (v) => _then(v as _$_Detail));
-
-  @override
-  _$_Detail get _value => super._value as _$_Detail;
-
-  @override
-  $Res call({
-    Object? character = freezed,
-    Object? characterDetails = freezed,
-  }) {
-    return _then(_$_Detail(
-      character == freezed
-          ? _value.character
-          : character // ignore: cast_nullable_to_non_nullable
-              as Character,
-      characterDetails == freezed
-          ? _value.characterDetails
-          : characterDetails // ignore: cast_nullable_to_non_nullable
-              as CharacterDetails,
-    ));
-  }
-
-  @override
-  $CharacterCopyWith<$Res> get character {
-    return $CharacterCopyWith<$Res>(_value.character, (value) {
-      return _then(_value.copyWith(character: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_Detail implements _Detail {
-  const _$_Detail(this.character, this.characterDetails);
-
-  @override
-  final Character character;
-  @override
-  final CharacterDetails characterDetails;
-
-  @override
-  String toString() {
-    return 'CharacterState.detail(character: $character, characterDetails: $characterDetails)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Detail &&
-            const DeepCollectionEquality().equals(other.character, character) &&
-            const DeepCollectionEquality()
-                .equals(other.characterDetails, characterDetails));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(character),
-      const DeepCollectionEquality().hash(characterDetails));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_DetailCopyWith<_$_Detail> get copyWith =>
-      __$$_DetailCopyWithImpl<_$_Detail>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)
-        setCharactersState,
-    required TResult Function(List<CharacterDetails> characterDetail)
-        getAllDetails,
-    required TResult Function(
-            Character character, CharacterDetails characterDetails)
-        detail,
-  }) {
-    return detail(character, characterDetails);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
-        setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
-  }) {
-    return detail?.call(character, characterDetails);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            List<Character> characters, Pagination pagination, int currentPage)?
-        setCharactersState,
-    TResult Function(List<CharacterDetails> characterDetail)? getAllDetails,
-    TResult Function(Character character, CharacterDetails characterDetails)?
-        detail,
-    required TResult orElse(),
-  }) {
-    if (detail != null) {
-      return detail(character, characterDetails);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SetCharactersState value) setCharactersState,
-    required TResult Function(_GetAllDetails value) getAllDetails,
-    required TResult Function(_Detail value) detail,
-  }) {
-    return detail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
-  }) {
-    return detail?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SetCharactersState value)? setCharactersState,
-    TResult Function(_GetAllDetails value)? getAllDetails,
-    TResult Function(_Detail value)? detail,
-    required TResult orElse(),
-  }) {
-    if (detail != null) {
-      return detail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Detail implements CharacterState {
-  const factory _Detail(
-          final Character character, final CharacterDetails characterDetails) =
-      _$_Detail;
-
-  Character get character;
-  CharacterDetails get characterDetails;
-  @JsonKey(ignore: true)
-  _$$_DetailCopyWith<_$_Detail> get copyWith =>
       throw _privateConstructorUsedError;
 }

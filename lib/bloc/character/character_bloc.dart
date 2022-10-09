@@ -32,7 +32,13 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
             CharacterDetails characterDetail =
                 await getCharacterDetails(character);
 
-            emit(CharacterState.detail(character, characterDetail));
+            emit(CharacterState.setCharactersState(
+              state.characters,
+              state.pagination,
+              state.currentPage,
+              character: character,
+              characterDetails: characterDetail,
+            ));
           },
         );
       },
