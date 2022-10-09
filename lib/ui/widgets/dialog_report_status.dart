@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
+import 'package:invasion_app/resources/themes/utils.dart';
 
 class DialogReportStatus extends StatelessWidget {
   const DialogReportStatus({Key? key}) : super(key: key);
@@ -9,12 +10,26 @@ class DialogReportStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterReportedBloc, CharacterReportedState>(
       builder: (context, state) {
+        if (state.requestStatus == null) {
+          return const SimpleDialog(
+            children: [
+              Center(
+                child: CircularProgressIndicator(),
+              )
+            ],
+          );
+        }
+
         return SimpleDialog(
-          title: const Text('Status report'),
-          children: [
-            Text(state.requestStatus?['mesage'] ?? ''),
-            Text(state.requestStatus?['status'] ?? ''),
-          ],
+          titlePadding: const EdgeInsets.all(40),
+          title: Text(
+            'Report ${state.requestStatus!['mesage']}',
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                  fontSize: 40,
+                  color: black,
+                ),
+            textAlign: TextAlign.center,
+          ),
         );
       },
     );
