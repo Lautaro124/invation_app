@@ -44,7 +44,7 @@ class _MobileDetailState extends State<MobileDetail> {
               children: [
                 SizedBox(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.8,
+                  height: MediaQuery.of(context).size.height * 0.74,
                   child: ListView.separated(
                     itemBuilder: (context, index) => widgetsDetail[index],
                     separatorBuilder: (context, index) => const DividerDetail(),

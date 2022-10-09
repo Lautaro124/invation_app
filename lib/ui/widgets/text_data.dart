@@ -15,12 +15,24 @@ class TextData extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title),
-          Container(
-            margin: const EdgeInsets.only(left: 10),
+          Expanded(
+            flex: 1,
             child: Text(
-              data ?? '',
-              style: Theme.of(context).textTheme.titleLarge,
+              title,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              margin: const EdgeInsets.only(left: 3),
+              child: Text(
+                data ?? '',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
             ),
           ),
         ],

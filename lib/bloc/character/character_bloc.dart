@@ -23,29 +23,14 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
             Pagination pagination = await getPaginationInfo(page);
 
             emit(CharacterState.setCharactersState(
-                characters, pagination, page));
+              characters,
+              pagination,
+              page,
+            ));
           },
-          setDetail: () {
-            List<CharacterDetails> details = state
-                .mapOrNull(setCharactersState: (value) => value.characters)!
-                .map((Character character) {
-              late CharacterDetails characterDetails;
-              getCharacterDetails(character)
-                  .then((value) => characterDetails = value);
-
-              return characterDetails;
-            }).toList();
-
-            emit(CharacterState.getAllDetails(details));
-          },
-          searchDetail: (Character character) {
-            List<CharacterDetails> characterDetails = state.maybeMap(
-              getAllDetails: (value) => value.characterDetail,
-              orElse: () => [],
-            );
-
-            CharacterDetails characterDetail = characterDetails.firstWhere(
-                (element) => element.characterName == character.name);
+          getDetail: (Character character) async {
+            CharacterDetails characterDetail =
+                await getCharacterDetails(character);
 
             emit(CharacterState.detail(character, characterDetail));
           },
