@@ -34,14 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void events() async {
     context.read<CharacterBloc>().add(const CharacterEvent.getPageInfo(1));
 
-    await Future.delayed(
-      const Duration(seconds: 2),
-      () => context.read<CharacterBloc>().add(
-            const CharacterEvent.setDetail(),
-          ),
-    );
-
-    await Future.delayed(const Duration(seconds: 1), () => goDashboard());
+    await Future.delayed(const Duration(seconds: 2), () => goDashboard());
   }
 
   void goDashboard() {

@@ -25,7 +25,7 @@ class _CharacterCardState extends State<CharacterCard> {
   void detailEvent() {
     Character character = widget.character;
 
-    context.read<CharacterBloc>().add(CharacterEvent.searchDetail(character));
+    context.read<CharacterBloc>().add(CharacterEvent.getDetail(character));
     goDetailScreen();
   }
 
