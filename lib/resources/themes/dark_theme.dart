@@ -28,4 +28,19 @@ ThemeData dartTheme() => ThemeData.dark().copyWith(
         backgroundColor: black,
       ),
       dialogBackgroundColor: yellow,
+      tabBarTheme: TabBarTheme(
+        unselectedLabelColor: yellow,
+        labelColor: yellow,
+        overlayColor: MaterialStateProperty.resolveWith((_) => black),
+        unselectedLabelStyle: const TextStyle(
+          fontFamily: starjediFont,
+          fontSize: 12,
+          color: yellow,
+        ),
+        labelStyle: const TextStyle(
+          fontFamily: starjediFont,
+          fontSize: 13,
+          color: yellow,
+        ),
+      ),
     );

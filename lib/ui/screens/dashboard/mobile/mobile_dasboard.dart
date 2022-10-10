@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/listview_characters.dart';
 import 'package:invasion_app/ui/widgets/pagination_widget.dart';
@@ -14,13 +12,6 @@ class MobileDashboard extends StatefulWidget {
 }
 
 class _MobileDashboardState extends State<MobileDashboard> {
-  @override
-  void initState() {
-    context.read<CharacterBloc>().add(const CharacterEvent.clearDetail());
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ScreenBase(
