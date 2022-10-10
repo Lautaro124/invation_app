@@ -31,6 +31,22 @@ ThemeData dartTheme() => ThemeData.dark().copyWith(
       tabBarTheme: TabBarTheme(
         unselectedLabelColor: yellow,
         labelColor: yellow,
+        indicator: const BoxDecoration(
+          border: Border(
+            left: BorderSide(
+              color: yellow,
+              width: 0.1,
+            ),
+            right: BorderSide(
+              color: yellow,
+              width: 0.1,
+            ),
+            bottom: BorderSide(
+              color: yellow,
+              width: 1.5,
+            ),
+          ),
+        ),
         overlayColor: MaterialStateProperty.resolveWith((_) => black),
         unselectedLabelStyle: const TextStyle(
           fontFamily: starjediFont,
@@ -39,7 +55,7 @@ ThemeData dartTheme() => ThemeData.dark().copyWith(
         ),
         labelStyle: const TextStyle(
           fontFamily: starjediFont,
-          fontSize: 13,
+          fontSize: 15,
           color: yellow,
         ),
       ),

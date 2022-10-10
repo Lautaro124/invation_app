@@ -17,6 +17,7 @@ class HomeWordInfo extends StatelessWidget {
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.33,
           padding: const EdgeInsets.all(5),
+          margin: const EdgeInsets.only(top: 20),
           child: Row(
             children: [
               Expanded(
