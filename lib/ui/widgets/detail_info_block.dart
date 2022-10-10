@@ -10,6 +10,7 @@ class DetailInfoBlock extends StatelessWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

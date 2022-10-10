@@ -23,43 +23,45 @@ class VehiclesList extends StatelessWidget {
               )
             : Container(
                 width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.4,
+                height: MediaQuery.of(context).size.height * 0.7,
                 margin: const EdgeInsets.only(top: 10),
-                child: Row(
-                  children: vehiclesList
-                      .map(
-                        (vehicle) => DetailInfoBlock(
-                          left: [
-                            TextData(
-                              title: 'Name',
-                              data: vehicle.name,
-                            ),
-                            TextData(
-                              title: 'Consumables',
-                              data: vehicle.consumables,
-                            ),
-                            TextData(
-                              title: 'Max atmosphering speed',
-                              data: vehicle.maxAtmospheringSpeed,
-                            ),
-                          ],
-                          rigth: [
-                            TextData(
-                              title: 'Vehicle class',
-                              data: vehicle.vehicleClass,
-                            ),
-                            TextData(
-                              title: 'Model',
-                              data: vehicle.model,
-                            ),
-                            TextData(
-                              title: 'Passengers',
-                              data: vehicle.passengers,
-                            ),
-                          ],
-                        ),
-                      )
-                      .toList(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: vehiclesList
+                        .map(
+                          (vehicle) => DetailInfoBlock(
+                            left: [
+                              TextData(
+                                title: 'Name',
+                                data: vehicle.name,
+                              ),
+                              TextData(
+                                title: 'Consumables',
+                                data: vehicle.consumables,
+                              ),
+                              TextData(
+                                title: 'Max atmosphering speed',
+                                data: vehicle.maxAtmospheringSpeed,
+                              ),
+                            ],
+                            rigth: [
+                              TextData(
+                                title: 'Vehicle class',
+                                data: vehicle.vehicleClass,
+                              ),
+                              TextData(
+                                title: 'Model',
+                                data: vehicle.model,
+                              ),
+                              TextData(
+                                title: 'Passengers',
+                                data: vehicle.passengers,
+                              ),
+                            ],
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
               );
       },
