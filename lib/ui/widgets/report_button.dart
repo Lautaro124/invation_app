@@ -19,17 +19,20 @@ class _ReportButtonState extends State<ReportButton> {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterReportedBloc, CharacterReportedState>(
       builder: (context, state) {
-        return ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Theme.of(context).errorColor,
-          ),
-          onPressed: !state.isConected ? null : () => event(widget.character),
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(10),
-            child: const Center(
-              child: Text(
-                'Report',
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).errorColor,
+            ),
+            onPressed: !state.isConected ? null : () => event(widget.character),
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(10),
+              child: const Center(
+                child: Text(
+                  'Report',
+                ),
               ),
             ),
           ),

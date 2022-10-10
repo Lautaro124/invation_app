@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/resources/constants/tab_details.dart';
+import 'package:invasion_app/resources/enum/navigation_routes.dart';
 import 'package:invasion_app/resources/themes/utils.dart';
 import 'package:invasion_app/ui/widgets/character_basic_info.dart';
-import 'package:invasion_app/ui/widgets/homeword_info.dart';
 import 'package:invasion_app/ui/widgets/report_button.dart';
-import 'package:invasion_app/ui/widgets/starship.dart';
-import 'package:invasion_app/ui/widgets/vehicles_list.dart';
 
 class MobileDetail extends StatefulWidget {
   const MobileDetail({Key? key}) : super(key: key);
@@ -17,13 +16,6 @@ class MobileDetail extends StatefulWidget {
 }
 
 class _MobileDetailState extends State<MobileDetail> {
-  List<Widget> widgetsDetail = [
-    const CharacterBasicInfo(),
-    const HomeWordInfo(),
-    const StarShipInfo(),
-    const VehiclesList(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
@@ -40,7 +32,17 @@ class _MobileDetailState extends State<MobileDetail> {
 
         return Scaffold(
           appBar: AppBar(
-            title: Text(character.name),
+            title: Text(
+              character.name,
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            leading: IconButton(
+              onPressed: backEvent,
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: yellow,
+              ),
+            ),
           ),
           body: Container(
             width: double.infinity,
@@ -54,28 +56,20 @@ class _MobileDetailState extends State<MobileDetail> {
                   height: MediaQuery.of(context).size.height * 0.46,
                   child: Column(
                     children: [
-                      const TabBar(
-                        tabs: [
-                          Tab(
-                            text: 'Homeword',
-                          ),
-                          Tab(
-                            text: 'Starships',
-                          ),
-                          Tab(
-                            text: 'Vehicles',
-                          ),
-                        ],
+                      TabBar(
+                        tabs: tabs
+                            .map((String tabName) => Tab(
+                                  text: tabName,
+                                ))
+                            .toList(),
                       ),
                       SizedBox(
                         width: double.infinity,
                         height: MediaQuery.of(context).size.height * 0.4,
-                        child: const TabBarView(
-                          children: [
-                            HomeWordInfo(),
-                            StarShipInfo(),
-                            VehiclesList(),
-                          ],
+                        child: TabBarView(
+                          children: tabWidgets
+                              .map((Widget tabWidget) => tabWidget)
+                              .toList(),
                         ),
                       ),
                     ],
@@ -88,5 +82,14 @@ class _MobileDetailState extends State<MobileDetail> {
         );
       },
     );
+  }
+
+  void backEvent() {
+    context.read<CharacterBloc>().add(const CharacterEvent.clearDetail());
+
+    Future.delayed(
+        const Duration(milliseconds: 20),
+        () => Navigator.pushReplacementNamed(
+            context, NavigationRoutes.dashboard.name));
   }
 }
