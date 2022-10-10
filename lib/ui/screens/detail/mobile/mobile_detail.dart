@@ -36,6 +36,7 @@ class _MobileDetailState extends State<MobileDetail> {
               character.name,
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            centerTitle: true,
             leading: IconButton(
               onPressed: backEvent,
               icon: const Icon(
