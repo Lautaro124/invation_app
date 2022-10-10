@@ -27,7 +27,7 @@ ThemeData dartTheme() => ThemeData.dark().copyWith(
       appBarTheme: const AppBarTheme(
         backgroundColor: black,
       ),
-      dialogBackgroundColor: yellow,
+      dialogBackgroundColor: black,
       tabBarTheme: TabBarTheme(
         unselectedLabelColor: yellow,
         labelColor: yellow,

@@ -20,18 +20,21 @@ mixin _$CharacterReportedEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CharacterReportedEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +156,7 @@ class _$_SendReport implements _SendReport {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) {
     return sendReport(characterReported);
   }
@@ -159,6 +166,7 @@ class _$_SendReport implements _SendReport {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) {
     return sendReport?.call(characterReported);
   }
@@ -168,6 +176,7 @@ class _$_SendReport implements _SendReport {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) {
     if (sendReport != null) {
@@ -181,6 +190,7 @@ class _$_SendReport implements _SendReport {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) {
     return sendReport(this);
   }
@@ -190,6 +200,7 @@ class _$_SendReport implements _SendReport {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) {
     return sendReport?.call(this);
   }
@@ -199,6 +210,7 @@ class _$_SendReport implements _SendReport {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) {
     if (sendReport != null) {
@@ -286,6 +298,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) {
     return changeConection(isConected);
   }
@@ -295,6 +308,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) {
     return changeConection?.call(isConected);
   }
@@ -304,6 +318,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) {
     if (changeConection != null) {
@@ -317,6 +332,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) {
     return changeConection(this);
   }
@@ -326,6 +342,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) {
     return changeConection?.call(this);
   }
@@ -335,6 +352,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) {
     if (changeConection != null) {
@@ -351,6 +369,117 @@ abstract class _ChangeConection implements CharacterReportedEvent {
   @JsonKey(ignore: true)
   _$$_ChangeConectionCopyWith<_$_ChangeConection> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ClearReportCopyWith<$Res> {
+  factory _$$_ClearReportCopyWith(
+          _$_ClearReport value, $Res Function(_$_ClearReport) then) =
+      __$$_ClearReportCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ClearReportCopyWithImpl<$Res>
+    extends _$CharacterReportedEventCopyWithImpl<$Res>
+    implements _$$_ClearReportCopyWith<$Res> {
+  __$$_ClearReportCopyWithImpl(
+      _$_ClearReport _value, $Res Function(_$_ClearReport) _then)
+      : super(_value, (v) => _then(v as _$_ClearReport));
+
+  @override
+  _$_ClearReport get _value => super._value as _$_ClearReport;
+}
+
+/// @nodoc
+
+class _$_ClearReport implements _ClearReport {
+  const _$_ClearReport();
+
+  @override
+  String toString() {
+    return 'CharacterReportedEvent.clearReport()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ClearReport);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CharacterReported characterReported) sendReport,
+    required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
+  }) {
+    return clearReport();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CharacterReported characterReported)? sendReport,
+    TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
+  }) {
+    return clearReport?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CharacterReported characterReported)? sendReport,
+    TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
+    required TResult orElse(),
+  }) {
+    if (clearReport != null) {
+      return clearReport();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SendReport value) sendReport,
+    required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
+  }) {
+    return clearReport(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SendReport value)? sendReport,
+    TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
+  }) {
+    return clearReport?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SendReport value)? sendReport,
+    TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
+    required TResult orElse(),
+  }) {
+    if (clearReport != null) {
+      return clearReport(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearReport implements CharacterReportedEvent {
+  const factory _ClearReport() = _$_ClearReport;
 }
 
 /// @nodoc

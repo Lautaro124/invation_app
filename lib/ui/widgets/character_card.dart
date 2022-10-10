@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
 import 'package:invasion_app/resources/enum/navigation_routes.dart';
 import 'package:invasion_app/resources/themes/utils.dart';
@@ -39,6 +40,9 @@ class _CharacterCardState extends State<CharacterCard> {
 
   void detailEvent() {
     Character character = widget.character;
+    context
+        .read<CharacterReportedBloc>()
+        .add(const CharacterReportedEvent.clearReport());
 
     context.read<CharacterBloc>().add(CharacterEvent.getDetail(character));
     goDetailScreen();

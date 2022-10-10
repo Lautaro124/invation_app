@@ -37,6 +37,13 @@ class CharacterReportedBloc
             ),
           );
           return;
+        }, clearReport: () {
+          emit(CharacterReportedState.report(
+            state.isConected,
+            characterReported: null,
+            requestStatus: null,
+          ));
+          return;
         });
       },
     );
