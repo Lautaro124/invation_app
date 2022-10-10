@@ -6,4 +6,5 @@ class CharacterReportedEvent with _$CharacterReportedEvent {
       CharacterReported characterReported) = _SendReport;
   const factory CharacterReportedEvent.changeConection(bool isConected) =
       _ChangeConection;
+  const factory CharacterReportedEvent.clearReport() = _ClearReport;
 }

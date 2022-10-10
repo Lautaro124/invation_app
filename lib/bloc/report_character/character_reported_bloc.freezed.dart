@@ -20,18 +20,21 @@ mixin _$CharacterReportedEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CharacterReportedEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +156,7 @@ class _$_SendReport implements _SendReport {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) {
     return sendReport(characterReported);
   }
@@ -159,6 +166,7 @@ class _$_SendReport implements _SendReport {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) {
     return sendReport?.call(characterReported);
   }
@@ -168,6 +176,7 @@ class _$_SendReport implements _SendReport {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) {
     if (sendReport != null) {
@@ -181,6 +190,7 @@ class _$_SendReport implements _SendReport {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) {
     return sendReport(this);
   }
@@ -190,6 +200,7 @@ class _$_SendReport implements _SendReport {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) {
     return sendReport?.call(this);
   }
@@ -199,6 +210,7 @@ class _$_SendReport implements _SendReport {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) {
     if (sendReport != null) {
@@ -286,6 +298,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult when<TResult extends Object?>({
     required TResult Function(CharacterReported characterReported) sendReport,
     required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
   }) {
     return changeConection(isConected);
   }
@@ -295,6 +308,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
   }) {
     return changeConection?.call(isConected);
   }
@@ -304,6 +318,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(CharacterReported characterReported)? sendReport,
     TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
     required TResult orElse(),
   }) {
     if (changeConection != null) {
@@ -317,6 +332,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult map<TResult extends Object?>({
     required TResult Function(_SendReport value) sendReport,
     required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
   }) {
     return changeConection(this);
   }
@@ -326,6 +342,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
   }) {
     return changeConection?.call(this);
   }
@@ -335,6 +352,7 @@ class _$_ChangeConection implements _ChangeConection {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SendReport value)? sendReport,
     TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
     required TResult orElse(),
   }) {
     if (changeConection != null) {
@@ -354,29 +372,142 @@ abstract class _ChangeConection implements CharacterReportedEvent {
 }
 
 /// @nodoc
+abstract class _$$_ClearReportCopyWith<$Res> {
+  factory _$$_ClearReportCopyWith(
+          _$_ClearReport value, $Res Function(_$_ClearReport) then) =
+      __$$_ClearReportCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ClearReportCopyWithImpl<$Res>
+    extends _$CharacterReportedEventCopyWithImpl<$Res>
+    implements _$$_ClearReportCopyWith<$Res> {
+  __$$_ClearReportCopyWithImpl(
+      _$_ClearReport _value, $Res Function(_$_ClearReport) _then)
+      : super(_value, (v) => _then(v as _$_ClearReport));
+
+  @override
+  _$_ClearReport get _value => super._value as _$_ClearReport;
+}
+
+/// @nodoc
+
+class _$_ClearReport implements _ClearReport {
+  const _$_ClearReport();
+
+  @override
+  String toString() {
+    return 'CharacterReportedEvent.clearReport()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ClearReport);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CharacterReported characterReported) sendReport,
+    required TResult Function(bool isConected) changeConection,
+    required TResult Function() clearReport,
+  }) {
+    return clearReport();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CharacterReported characterReported)? sendReport,
+    TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
+  }) {
+    return clearReport?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CharacterReported characterReported)? sendReport,
+    TResult Function(bool isConected)? changeConection,
+    TResult Function()? clearReport,
+    required TResult orElse(),
+  }) {
+    if (clearReport != null) {
+      return clearReport();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SendReport value) sendReport,
+    required TResult Function(_ChangeConection value) changeConection,
+    required TResult Function(_ClearReport value) clearReport,
+  }) {
+    return clearReport(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SendReport value)? sendReport,
+    TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
+  }) {
+    return clearReport?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SendReport value)? sendReport,
+    TResult Function(_ChangeConection value)? changeConection,
+    TResult Function(_ClearReport value)? clearReport,
+    required TResult orElse(),
+  }) {
+    if (clearReport != null) {
+      return clearReport(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearReport implements CharacterReportedEvent {
+  const factory _ClearReport() = _$_ClearReport;
+}
+
+/// @nodoc
 mixin _$CharacterReportedState {
+  bool get isConected => throw _privateConstructorUsedError;
   CharacterReported? get characterReported =>
       throw _privateConstructorUsedError;
   Map<String, String>? get requestStatus => throw _privateConstructorUsedError;
-  bool get isConected => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)
+    required TResult Function(
+            bool isConected,
+            CharacterReported? characterReported,
+            Map<String, String>? requestStatus)
         report,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
     required TResult orElse(),
   }) =>
@@ -409,9 +540,9 @@ abstract class $CharacterReportedStateCopyWith<$Res> {
           $Res Function(CharacterReportedState) then) =
       _$CharacterReportedStateCopyWithImpl<$Res>;
   $Res call(
-      {CharacterReported? characterReported,
-      Map<String, String>? requestStatus,
-      bool isConected});
+      {bool isConected,
+      CharacterReported? characterReported,
+      Map<String, String>? requestStatus});
 
   $CharacterReportedCopyWith<$Res>? get characterReported;
 }
@@ -427,11 +558,15 @@ class _$CharacterReportedStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isConected = freezed,
     Object? characterReported = freezed,
     Object? requestStatus = freezed,
-    Object? isConected = freezed,
   }) {
     return _then(_value.copyWith(
+      isConected: isConected == freezed
+          ? _value.isConected
+          : isConected // ignore: cast_nullable_to_non_nullable
+              as bool,
       characterReported: characterReported == freezed
           ? _value.characterReported
           : characterReported // ignore: cast_nullable_to_non_nullable
@@ -440,10 +575,6 @@ class _$CharacterReportedStateCopyWithImpl<$Res>
           ? _value.requestStatus
           : requestStatus // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
-      isConected: isConected == freezed
-          ? _value.isConected
-          : isConected // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 
@@ -466,9 +597,9 @@ abstract class _$$_ReportCopyWith<$Res>
       __$$_ReportCopyWithImpl<$Res>;
   @override
   $Res call(
-      {CharacterReported? characterReported,
-      Map<String, String>? requestStatus,
-      bool isConected});
+      {bool isConected,
+      CharacterReported? characterReported,
+      Map<String, String>? requestStatus});
 
   @override
   $CharacterReportedCopyWith<$Res>? get characterReported;
@@ -486,23 +617,23 @@ class __$$_ReportCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? isConected = freezed,
     Object? characterReported = freezed,
     Object? requestStatus = freezed,
-    Object? isConected = freezed,
   }) {
     return _then(_$_Report(
-      characterReported == freezed
-          ? _value.characterReported
-          : characterReported // ignore: cast_nullable_to_non_nullable
-              as CharacterReported?,
-      requestStatus == freezed
-          ? _value._requestStatus
-          : requestStatus // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
       isConected == freezed
           ? _value.isConected
           : isConected // ignore: cast_nullable_to_non_nullable
               as bool,
+      characterReported: characterReported == freezed
+          ? _value.characterReported
+          : characterReported // ignore: cast_nullable_to_non_nullable
+              as CharacterReported?,
+      requestStatus: requestStatus == freezed
+          ? _value._requestStatus
+          : requestStatus // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
@@ -510,10 +641,12 @@ class __$$_ReportCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Report implements _Report {
-  const _$_Report(this.characterReported,
-      final Map<String, String>? requestStatus, this.isConected)
+  const _$_Report(this.isConected,
+      {this.characterReported, final Map<String, String>? requestStatus})
       : _requestStatus = requestStatus;
 
+  @override
+  final bool isConected;
   @override
   final CharacterReported? characterReported;
   final Map<String, String>? _requestStatus;
@@ -526,11 +659,8 @@ class _$_Report implements _Report {
   }
 
   @override
-  final bool isConected;
-
-  @override
   String toString() {
-    return 'CharacterReportedState.report(characterReported: $characterReported, requestStatus: $requestStatus, isConected: $isConected)';
+    return 'CharacterReportedState.report(isConected: $isConected, characterReported: $characterReported, requestStatus: $requestStatus)';
   }
 
   @override
@@ -539,19 +669,19 @@ class _$_Report implements _Report {
         (other.runtimeType == runtimeType &&
             other is _$_Report &&
             const DeepCollectionEquality()
+                .equals(other.isConected, isConected) &&
+            const DeepCollectionEquality()
                 .equals(other.characterReported, characterReported) &&
             const DeepCollectionEquality()
-                .equals(other._requestStatus, _requestStatus) &&
-            const DeepCollectionEquality()
-                .equals(other.isConected, isConected));
+                .equals(other._requestStatus, _requestStatus));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(isConected),
       const DeepCollectionEquality().hash(characterReported),
-      const DeepCollectionEquality().hash(_requestStatus),
-      const DeepCollectionEquality().hash(isConected));
+      const DeepCollectionEquality().hash(_requestStatus));
 
   @JsonKey(ignore: true)
   @override
@@ -561,33 +691,35 @@ class _$_Report implements _Report {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)
+    required TResult Function(
+            bool isConected,
+            CharacterReported? characterReported,
+            Map<String, String>? requestStatus)
         report,
   }) {
-    return report(characterReported, requestStatus, isConected);
+    return report(isConected, characterReported, requestStatus);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
   }) {
-    return report?.call(characterReported, requestStatus, isConected);
+    return report?.call(isConected, characterReported, requestStatus);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CharacterReported? characterReported,
-            Map<String, String>? requestStatus, bool isConected)?
+    TResult Function(bool isConected, CharacterReported? characterReported,
+            Map<String, String>? requestStatus)?
         report,
     required TResult orElse(),
   }) {
     if (report != null) {
-      return report(characterReported, requestStatus, isConected);
+      return report(isConected, characterReported, requestStatus);
     }
     return orElse();
   }
@@ -622,17 +754,16 @@ class _$_Report implements _Report {
 }
 
 abstract class _Report implements CharacterReportedState {
-  const factory _Report(
-      final CharacterReported? characterReported,
-      final Map<String, String>? requestStatus,
-      final bool isConected) = _$_Report;
+  const factory _Report(final bool isConected,
+      {final CharacterReported? characterReported,
+      final Map<String, String>? requestStatus}) = _$_Report;
 
+  @override
+  bool get isConected;
   @override
   CharacterReported? get characterReported;
   @override
   Map<String, String>? get requestStatus;
-  @override
-  bool get isConected;
   @override
   @JsonKey(ignore: true)
   _$$_ReportCopyWith<_$_Report> get copyWith =>

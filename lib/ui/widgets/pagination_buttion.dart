@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invasion_app/resources/themes/utils.dart';
 
 class PaginationButton extends StatelessWidget {
   final String tite;
@@ -10,6 +11,10 @@ class PaginationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onTap,
+      style: TextButton.styleFrom(
+        primary: yellow,
+        textStyle: Theme.of(context).textTheme.bodyMedium,
+      ),
       child: Text(tite),
     );
   }

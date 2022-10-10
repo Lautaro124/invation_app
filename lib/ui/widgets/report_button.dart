@@ -19,27 +19,38 @@ class _ReportButtonState extends State<ReportButton> {
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterReportedBloc, CharacterReportedState>(
       builder: (context, state) {
-        return ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Theme.of(context).errorColor,
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).errorColor,
+            ),
+            onPressed: !state.isConected ? null : () => event(widget.character),
+            child: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(10),
+              child: const Center(
+                child: Text(
+                  'Report',
+                ),
+              ),
+            ),
           ),
-          onPressed: !state.isConected ? null : () => event(state.isConected),
-          child: const Text('Report'),
         );
       },
     );
   }
 
-  void event(bool isConected) {
-    if (widget.character == null) return;
+  void event(Character? character) {
+    if (character == null) return;
 
-    String userId = getIdToUrl(widget.character?.detailUrl ?? '').toString();
+    String userId = getIdToUrl(character.detailUrl).toString();
 
     context
         .read<CharacterReportedBloc>()
         .add(CharacterReportedEvent.sendReport(CharacterReported(
           userId: userId,
-          characterName: widget.character?.name,
+          characterName: character.name,
           dateTime: DateTime.now(),
         )));
     dialog();

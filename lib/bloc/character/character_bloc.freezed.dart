@@ -20,18 +20,21 @@ mixin _$CharacterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function(Character character) getDetail,
+    required TResult Function() clearDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$CharacterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SearchDetail value) getDetail,
+    required TResult Function(_ClearDetail value) clearDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,6 +146,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function(Character character) getDetail,
+    required TResult Function() clearDetail,
   }) {
     return getPageInfo(page);
   }
@@ -149,6 +156,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
   }) {
     return getPageInfo?.call(page);
   }
@@ -158,6 +166,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
     required TResult orElse(),
   }) {
     if (getPageInfo != null) {
@@ -171,6 +180,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SearchDetail value) getDetail,
+    required TResult Function(_ClearDetail value) clearDetail,
   }) {
     return getPageInfo(this);
   }
@@ -180,6 +190,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
   }) {
     return getPageInfo?.call(this);
   }
@@ -189,6 +200,7 @@ class _$_GetPageInfo implements _GetPageInfo {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
     required TResult orElse(),
   }) {
     if (getPageInfo != null) {
@@ -283,6 +295,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult when<TResult extends Object?>({
     required TResult Function(int page) getPageInfo,
     required TResult Function(Character character) getDetail,
+    required TResult Function() clearDetail,
   }) {
     return getDetail(character);
   }
@@ -292,6 +305,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
   }) {
     return getDetail?.call(character);
   }
@@ -301,6 +315,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int page)? getPageInfo,
     TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
     required TResult orElse(),
   }) {
     if (getDetail != null) {
@@ -314,6 +329,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult map<TResult extends Object?>({
     required TResult Function(_GetPageInfo value) getPageInfo,
     required TResult Function(_SearchDetail value) getDetail,
+    required TResult Function(_ClearDetail value) clearDetail,
   }) {
     return getDetail(this);
   }
@@ -323,6 +339,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
   }) {
     return getDetail?.call(this);
   }
@@ -332,6 +349,7 @@ class _$_SearchDetail implements _SearchDetail {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetPageInfo value)? getPageInfo,
     TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
     required TResult orElse(),
   }) {
     if (getDetail != null) {
@@ -348,6 +366,117 @@ abstract class _SearchDetail implements CharacterEvent {
   @JsonKey(ignore: true)
   _$$_SearchDetailCopyWith<_$_SearchDetail> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_ClearDetailCopyWith<$Res> {
+  factory _$$_ClearDetailCopyWith(
+          _$_ClearDetail value, $Res Function(_$_ClearDetail) then) =
+      __$$_ClearDetailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ClearDetailCopyWithImpl<$Res>
+    extends _$CharacterEventCopyWithImpl<$Res>
+    implements _$$_ClearDetailCopyWith<$Res> {
+  __$$_ClearDetailCopyWithImpl(
+      _$_ClearDetail _value, $Res Function(_$_ClearDetail) _then)
+      : super(_value, (v) => _then(v as _$_ClearDetail));
+
+  @override
+  _$_ClearDetail get _value => super._value as _$_ClearDetail;
+}
+
+/// @nodoc
+
+class _$_ClearDetail implements _ClearDetail {
+  const _$_ClearDetail();
+
+  @override
+  String toString() {
+    return 'CharacterEvent.clearDetail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ClearDetail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int page) getPageInfo,
+    required TResult Function(Character character) getDetail,
+    required TResult Function() clearDetail,
+  }) {
+    return clearDetail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int page)? getPageInfo,
+    TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
+  }) {
+    return clearDetail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int page)? getPageInfo,
+    TResult Function(Character character)? getDetail,
+    TResult Function()? clearDetail,
+    required TResult orElse(),
+  }) {
+    if (clearDetail != null) {
+      return clearDetail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetPageInfo value) getPageInfo,
+    required TResult Function(_SearchDetail value) getDetail,
+    required TResult Function(_ClearDetail value) clearDetail,
+  }) {
+    return clearDetail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GetPageInfo value)? getPageInfo,
+    TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
+  }) {
+    return clearDetail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetPageInfo value)? getPageInfo,
+    TResult Function(_SearchDetail value)? getDetail,
+    TResult Function(_ClearDetail value)? clearDetail,
+    required TResult orElse(),
+  }) {
+    if (clearDetail != null) {
+      return clearDetail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ClearDetail implements CharacterEvent {
+  const factory _ClearDetail() = _$_ClearDetail;
 }
 
 /// @nodoc

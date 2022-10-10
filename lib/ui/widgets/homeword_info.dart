@@ -15,52 +15,46 @@ class HomeWordInfo extends StatelessWidget {
 
         return Container(
           width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.33,
           padding: const EdgeInsets.all(5),
-          child: Column(
+          margin: const EdgeInsets.only(top: 20),
+          child: Row(
             children: [
-              Text(
-                'Home Word',
-                style: Theme.of(context).textTheme.titleMedium,
+              Expanded(
+                child: Column(
+                  children: [
+                    TextData(
+                      title: 'Name',
+                      data: homeWord?.name ?? '',
+                    ),
+                    TextData(
+                      title: 'Population',
+                      data: homeWord?.population ?? '',
+                    ),
+                    TextData(
+                      title: 'Diameter',
+                      data: homeWord?.diameter ?? '',
+                    ),
+                  ],
+                ),
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      children: [
-                        TextData(
-                          title: 'Name',
-                          data: homeWord?.name ?? '',
-                        ),
-                        TextData(
-                          title: 'Population',
-                          data: homeWord?.population ?? '',
-                        ),
-                        TextData(
-                          title: 'Diameter',
-                          data: homeWord?.diameter ?? '',
-                        ),
-                      ],
+              Expanded(
+                child: Column(
+                  children: [
+                    TextData(
+                      title: 'Terrain',
+                      data: homeWord?.terrain ?? '',
                     ),
-                  ),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        TextData(
-                          title: 'Terrain',
-                          data: homeWord?.terrain ?? '',
-                        ),
-                        TextData(
-                          title: 'Climate',
-                          data: homeWord?.climate ?? '',
-                        ),
-                        TextData(
-                          title: 'Rotation period',
-                          data: homeWord?.rotationPeriod ?? '',
-                        ),
-                      ],
+                    TextData(
+                      title: 'Climate',
+                      data: homeWord?.climate ?? '',
                     ),
-                  ),
-                ],
+                    TextData(
+                      title: 'Rotation period',
+                      data: homeWord?.rotationPeriod ?? '',
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

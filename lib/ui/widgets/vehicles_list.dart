@@ -14,53 +14,56 @@ class VehiclesList extends StatelessWidget {
       builder: (context, state) {
         final List<Vehicle>? vehiclesList = state.characterDetails?.vehicles;
 
-        return Container(
-          width: double.infinity,
-          margin: const EdgeInsets.only(top: 10),
-          child: vehiclesList == null || vehiclesList.isEmpty
-              ? Center(
-                  child: Text(
-                    'No have vehicles',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                )
-              : Row(
-                  children: vehiclesList
-                      .map(
-                        (vehicle) => DetailInfoBlock(
-                          left: [
-                            TextData(
-                              title: 'Name',
-                              data: vehicle.name,
-                            ),
-                            TextData(
-                              title: 'Consumables',
-                              data: vehicle.consumables,
-                            ),
-                            TextData(
-                              title: 'Max atmosphering speed',
-                              data: vehicle.maxAtmospheringSpeed,
-                            ),
-                          ],
-                          rigth: [
-                            TextData(
-                              title: 'Vehicle class',
-                              data: vehicle.vehicleClass,
-                            ),
-                            TextData(
-                              title: 'Model',
-                              data: vehicle.model,
-                            ),
-                            TextData(
-                              title: 'Passengers',
-                              data: vehicle.passengers,
-                            ),
-                          ],
-                        ),
-                      )
-                      .toList(),
+        return vehiclesList == null || vehiclesList.isEmpty
+            ? Center(
+                child: Text(
+                  'No have vehicles',
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
-        );
+              )
+            : Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.7,
+                margin: const EdgeInsets.only(top: 10),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: vehiclesList
+                        .map(
+                          (vehicle) => DetailInfoBlock(
+                            left: [
+                              TextData(
+                                title: 'Name',
+                                data: vehicle.name,
+                              ),
+                              TextData(
+                                title: 'Consumables',
+                                data: vehicle.consumables,
+                              ),
+                              TextData(
+                                title: 'Max atmosphering speed',
+                                data: vehicle.maxAtmospheringSpeed,
+                              ),
+                            ],
+                            rigth: [
+                              TextData(
+                                title: 'Vehicle class',
+                                data: vehicle.vehicleClass,
+                              ),
+                              TextData(
+                                title: 'Model',
+                                data: vehicle.model,
+                              ),
+                              TextData(
+                                title: 'Passengers',
+                                data: vehicle.passengers,
+                              ),
+                            ],
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              );
       },
     );
   }

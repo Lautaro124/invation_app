@@ -31,7 +31,9 @@ class TextData extends StatelessWidget {
                 data ?? '',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.titleLarge,
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                      fontSize: 18,
+                    ),
               ),
             ),
           ),

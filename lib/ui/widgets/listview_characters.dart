@@ -12,24 +12,28 @@ class ListViewCharacters extends StatefulWidget {
 
 class _ListViewCharactersState extends State<ListViewCharacters> {
   @override
+  void initState() {
+    super.initState();
+    context.read<CharacterBloc>().add(const CharacterEvent.clearDetail());
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<CharacterBloc, CharacterState>(
       builder: (context, state) {
-        final characters =
-            state.mapOrNull(setCharactersState: (value) => value.characters);
+        final characters = state.characters;
+
         return SizedBox(
           width: double.infinity,
           height: MediaQuery.of(context).size.height * 0.75,
           child: ListView(
-            children: characters == null
-                ? []
-                : characters
-                    .map(
-                      (character) => CharacterCard(
-                        character: character,
-                      ),
-                    )
-                    .toList(),
+            children: characters
+                .map(
+                  (character) => CharacterCard(
+                    character: character,
+                  ),
+                )
+                .toList(),
           ),
         );
       },
