@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invasion_app/resources/enum/navigation_routes.dart';
+import 'package:invasion_app/resources/themes/utils.dart';
 
 AppBar appBar(BuildContext context, String? title) => AppBar(
       title: Text(
@@ -7,6 +8,13 @@ AppBar appBar(BuildContext context, String? title) => AppBar(
         style: Theme.of(context).textTheme.titleLarge,
       ),
       centerTitle: true,
+      leading: IconButton(
+        onPressed: () => Navigator.pop(context),
+        icon: const Icon(
+          Icons.arrow_back_ios_new,
+          color: yellow,
+        ),
+      ),
       actions: [
         IconButton(
           onPressed: () {

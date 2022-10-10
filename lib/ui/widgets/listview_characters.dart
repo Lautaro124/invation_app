@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
+import 'package:invasion_app/resources/themes/utils.dart';
 import 'package:invasion_app/ui/widgets/character_card.dart';
 
 class ListViewCharacters extends StatefulWidget {
@@ -11,10 +12,18 @@ class ListViewCharacters extends StatefulWidget {
 }
 
 class _ListViewCharactersState extends State<ListViewCharacters> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     super.initState();
-    context.read<CharacterBloc>().add(const CharacterEvent.clearDetail());
+    nextPageScroll();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
   }
 
   @override
@@ -25,18 +34,36 @@ class _ListViewCharactersState extends State<ListViewCharacters> {
 
         return SizedBox(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.75,
-          child: ListView(
-            children: characters
-                .map(
-                  (character) => CharacterCard(
-                    character: character,
+          height: double.infinity,
+          child: ListView.builder(
+            controller: _scrollController,
+            itemCount: characters.length + 1,
+            itemBuilder: (context, index) => index < characters.length
+                ? CharacterCard(character: characters[index])
+                : const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 32),
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: yellow,
+                      ),
+                    ),
                   ),
-                )
-                .toList(),
           ),
         );
       },
     );
+  }
+
+  void changePage(int page) =>
+      context.read<CharacterBloc>().add(CharacterEvent.getPageInfo(page));
+
+  void nextPageScroll() {
+    _scrollController.addListener(() {
+      if (_scrollController.offset ==
+          _scrollController.position.maxScrollExtent) {
+        int currentPage = context.read<CharacterBloc>().state.currentPage;
+        changePage(currentPage + 1);
+      }
+    });
   }
 }

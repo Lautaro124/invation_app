@@ -24,7 +24,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
             Pagination pagination = await getPaginationInfo(page);
 
             emit(CharacterState.setCharactersState(
-              characters,
+              [...state.characters, ...characters],
               pagination,
               page,
             ));
