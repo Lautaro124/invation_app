@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/Vehicle/vehicle.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -17,7 +18,7 @@ class VehiclesList extends StatelessWidget {
         return vehiclesList == null || vehiclesList.isEmpty
             ? Center(
                 child: Text(
-                  'No have vehicles',
+                  noVehicles,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               )
@@ -32,29 +33,29 @@ class VehiclesList extends StatelessWidget {
                           (vehicle) => DetailInfoBlock(
                             left: [
                               TextData(
-                                title: 'Name',
+                                title: name,
                                 data: vehicle.name,
                               ),
                               TextData(
-                                title: 'Consumables',
+                                title: consumables,
                                 data: vehicle.consumables,
                               ),
                               TextData(
-                                title: 'Max atmosphering speed',
+                                title: atmSpeed,
                                 data: vehicle.maxAtmospheringSpeed,
                               ),
                             ],
                             rigth: [
                               TextData(
-                                title: 'Vehicle class',
+                                title: vehicleClass,
                                 data: vehicle.vehicleClass,
                               ),
                               TextData(
-                                title: 'Model',
+                                title: model,
                                 data: vehicle.model,
                               ),
                               TextData(
-                                title: 'Passengers',
+                                title: passengers,
                                 data: vehicle.passengers,
                               ),
                             ],

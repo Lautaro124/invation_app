@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/starships/starships.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -17,7 +18,7 @@ class StarShipInfo extends StatelessWidget {
         return starShips == null || starShips.isEmpty
             ? Center(
                 child: Text(
-                  'No have starships',
+                  noStarship,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               )
@@ -32,25 +33,25 @@ class StarShipInfo extends StatelessWidget {
                           (startShip) => DetailInfoBlock(
                             left: [
                               TextData(
-                                title: 'Name',
+                                title: name,
                                 data: startShip.name,
                               ),
                               TextData(
-                                title: 'Starship class',
+                                title: starshioClass,
                                 data: startShip.starshipClass,
                               ),
                               TextData(
-                                title: 'Hyperdrive rating',
+                                title: hyperDrive,
                                 data: startShip.hyperdriveRating,
                               ),
                             ],
                             rigth: [
                               TextData(
-                                title: 'Model',
+                                title: model,
                                 data: startShip.model,
                               ),
                               TextData(
-                                title: 'Passengers',
+                                title: passengers,
                                 data: startShip.passengers,
                               ),
                             ],

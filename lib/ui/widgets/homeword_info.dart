@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/homeword/home_word.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
 class HomeWordInfo extends StatelessWidget {
@@ -24,15 +25,15 @@ class HomeWordInfo extends StatelessWidget {
                 child: Column(
                   children: [
                     TextData(
-                      title: 'Name',
+                      title: name,
                       data: homeWord?.name ?? '',
                     ),
                     TextData(
-                      title: 'Population',
+                      title: population,
                       data: homeWord?.population ?? '',
                     ),
                     TextData(
-                      title: 'Diameter',
+                      title: diameter,
                       data: homeWord?.diameter ?? '',
                     ),
                   ],
@@ -42,15 +43,15 @@ class HomeWordInfo extends StatelessWidget {
                 child: Column(
                   children: [
                     TextData(
-                      title: 'Terrain',
+                      title: terrain,
                       data: homeWord?.terrain ?? '',
                     ),
                     TextData(
-                      title: 'Climate',
+                      title: climate,
                       data: homeWord?.climate ?? '',
                     ),
                     TextData(
-                      title: 'Rotation period',
+                      title: rotation,
                       data: homeWord?.rotationPeriod ?? '',
                     ),
                   ],

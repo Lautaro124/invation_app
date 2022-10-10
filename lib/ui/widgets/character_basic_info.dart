@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/detail_info_block.dart';
 import 'package:invasion_app/ui/widgets/text_data.dart';
 
@@ -17,25 +18,25 @@ class CharacterBasicInfo extends StatelessWidget {
         return DetailInfoBlock(
           left: [
             TextData(
-              title: 'Birth year',
+              title: birhYear,
               data: character?.birthYear ?? '',
             ),
             TextData(
-              title: 'Hair color',
+              title: hairColor,
               data: character?.hairColor ?? '',
             ),
             TextData(
-              title: 'Eyes color',
+              title: eyesColor,
               data: character?.eyeColor ?? '',
             ),
           ],
           rigth: [
             TextData(
-              title: 'Height',
+              title: height,
               data: character?.height ?? '',
             ),
             TextData(
-              title: 'Mass',
+              title: mass,
               data: character?.mass ?? '',
             ),
           ],

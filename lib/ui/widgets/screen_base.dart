@@ -15,7 +15,11 @@ class ScreenBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appbar ?? appBar(context, title),
+      appBar: appbar ??
+          appBar(
+            context,
+            title,
+          ),
       body: SafeArea(child: child),
     );
   }

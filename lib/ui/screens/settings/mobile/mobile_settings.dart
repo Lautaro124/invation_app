@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/report_character/character_reported_bloc.dart';
+import 'package:invasion_app/resources/constants/texts.dart';
 import 'package:invasion_app/ui/widgets/screen_base.dart';
 
 class MobileSettings extends StatefulWidget {
@@ -14,7 +15,7 @@ class _MobileSettingsState extends State<MobileSettings> {
   @override
   Widget build(BuildContext context) {
     return ScreenBase(
-      title: 'Connection',
+      title: conection,
       child: Container(
         width: double.infinity,
         height: double.infinity,
@@ -25,7 +26,7 @@ class _MobileSettingsState extends State<MobileSettings> {
             return Column(
               children: [
                 SwitchListTile.adaptive(
-                  title: const Text('Connection'),
+                  title: const Text(conection),
                   value: state.isConected,
                   onChanged: changeConectionState,
                 ),

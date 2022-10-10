@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:invasion_app/bloc/character/character_bloc.dart';
 import 'package:invasion_app/model/character/character.dart';
-import 'package:invasion_app/resources/constants/tab_details.dart';
 import 'package:invasion_app/resources/enum/navigation_routes.dart';
 import 'package:invasion_app/resources/themes/utils.dart';
 import 'package:invasion_app/ui/widgets/character_basic_info.dart';
+import 'package:invasion_app/ui/widgets/detail_tab_view.dart';
 import 'package:invasion_app/ui/widgets/report_button.dart';
 
 class MobileDetail extends StatefulWidget {
@@ -36,6 +36,7 @@ class _MobileDetailState extends State<MobileDetail> {
               character.name,
               style: Theme.of(context).textTheme.titleLarge,
             ),
+            centerTitle: true,
             leading: IconButton(
               onPressed: backEvent,
               icon: const Icon(
@@ -51,30 +52,7 @@ class _MobileDetailState extends State<MobileDetail> {
             child: Column(
               children: [
                 const CharacterBasicInfo(),
-                SizedBox(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.46,
-                  child: Column(
-                    children: [
-                      TabBar(
-                        tabs: tabs
-                            .map((String tabName) => Tab(
-                                  text: tabName,
-                                ))
-                            .toList(),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: MediaQuery.of(context).size.height * 0.4,
-                        child: TabBarView(
-                          children: tabWidgets
-                              .map((Widget tabWidget) => tabWidget)
-                              .toList(),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                const DetailTabsViews(),
                 ReportButton(character: character),
               ],
             ),
