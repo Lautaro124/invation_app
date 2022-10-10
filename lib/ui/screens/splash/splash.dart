@@ -44,6 +44,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void events() =>
       context.read<CharacterBloc>().add(const CharacterEvent.getPageInfo(1));
 
-  void goDashboard() =>
-      Navigator.pushReplacementNamed(context, NavigationRoutes.dashboard.name);
+  void goDashboard() => Future.delayed(
+      const Duration(seconds: 2),
+      () => Navigator.pushReplacementNamed(
+          context, NavigationRoutes.dashboard.name));
 }
