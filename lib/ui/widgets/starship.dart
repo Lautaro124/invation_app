@@ -25,41 +25,39 @@ class StarShipInfo extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.7,
                 margin: const EdgeInsets.only(top: 10),
-                child: Column(
-                  children: [
-                    Text(
-                      'Starships',
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    ...starShips.map(
-                      (startShip) => DetailInfoBlock(
-                        left: [
-                          TextData(
-                            title: 'Name',
-                            data: startShip.name,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: starShips
+                        .map(
+                          (startShip) => DetailInfoBlock(
+                            left: [
+                              TextData(
+                                title: 'Name',
+                                data: startShip.name,
+                              ),
+                              TextData(
+                                title: 'Starship class',
+                                data: startShip.starshipClass,
+                              ),
+                              TextData(
+                                title: 'Hyperdrive rating',
+                                data: startShip.hyperdriveRating,
+                              ),
+                            ],
+                            rigth: [
+                              TextData(
+                                title: 'Model',
+                                data: startShip.model,
+                              ),
+                              TextData(
+                                title: 'Passengers',
+                                data: startShip.passengers,
+                              ),
+                            ],
                           ),
-                          TextData(
-                            title: 'Starship class',
-                            data: startShip.starshipClass,
-                          ),
-                          TextData(
-                            title: 'Hyperdrive rating',
-                            data: startShip.hyperdriveRating,
-                          ),
-                        ],
-                        rigth: [
-                          TextData(
-                            title: 'Model',
-                            data: startShip.model,
-                          ),
-                          TextData(
-                            title: 'Passengers',
-                            data: startShip.passengers,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                        )
+                        .toList(),
+                  ),
                 ),
               );
       },

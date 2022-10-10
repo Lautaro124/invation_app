@@ -8,7 +8,10 @@ class Detail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const ResponsiveLayout(
-      mobileScafold: MobileDetail(),
+      mobileScafold: DefaultTabController(
+        length: 3,
+        child: MobileDetail(),
+      ),
     );
   }
 }

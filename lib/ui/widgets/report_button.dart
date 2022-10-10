@@ -24,7 +24,15 @@ class _ReportButtonState extends State<ReportButton> {
             primary: Theme.of(context).errorColor,
           ),
           onPressed: !state.isConected ? null : () => event(widget.character),
-          child: const Text('Report'),
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(10),
+            child: const Center(
+              child: Text(
+                'Report',
+              ),
+            ),
+          ),
         );
       },
     );
